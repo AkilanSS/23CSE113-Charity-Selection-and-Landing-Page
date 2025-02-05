@@ -1,0 +1,12 @@
+#head-ctn {
+    margin: 16px 20px;
+}
+#nav-ctn {
+    margin: 10px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+#front-ctn {
+    background-color: #87bba2;
+    display: flex;
+}
