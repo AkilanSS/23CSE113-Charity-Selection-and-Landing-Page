@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap');
+body{
+    background-color: #EDF2F4;
+    margin: 0;
+}
+
+#head-ctn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-left: 18px;
+    margin-right: 18px;
+
+    #head-name{
+        font-family: "Fira Mono", serif;
+        font-weight: 700;
+        font-size: normal;
+        color: #364958;
+        font-size: 24px;
+        margin-right: 10px;
+    }
+    #quote{
+        font-family: "Montserrat", serif;
+        font-weight: 400;
+        font-size: 16px;
+        color: #3B6064;
+    }
+    #profile-icon{
+        margin-left: 10px;
+    }
+}
+
+#green-banner{
+    background-image: linear-gradient(75deg,#C9E4CA, #55828B);
+    margin: 16px;
+    margin-top: 0;
+    border-radius: 20px;
+
+    padding-top: 70px;
+    padding-bottom: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    #srch-char{
+        width: 40%;
+        height: 40px;
+        margin: 20px;
+        border-radius: 20px;
+        border-style: none;
+
+        filter: drop-shadow(4px 4px 3px); 
+
+        padding-left: 20px;
+    }
+
+    #search-nav{
+        display: flex;
+        justify-content: center;
+        gap: 75px;
+        align-content: center;
+        
+
+        a{
+            margin-top: 20px;
+
+            align-self: center;
+
+            text-decoration: none;
+            color: #364958;
+
+            font-family: "Montserrat", serif;
+            font-weight: 700;
+            font-size: 24px;
+        }
+        
+    }
+
+}
