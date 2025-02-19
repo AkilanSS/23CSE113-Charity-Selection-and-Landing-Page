@@ -1,12 +1,92 @@
-#head-ctn {
-    margin: 16px 20px;
+body {
+    font-family: "Montserrat";
 }
+
+#head-ctn {
+    margin: 16px 6px;
+
+}
+
 #nav-ctn {
-    margin: 10px 10px;
-    display: flex;
+    margin: 30px 10px;
+    display: flex;  
     justify-content: space-between;
 }
+
+.nav-item {
+    font-size: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+a {
+    margin-left: 30px;
+    text-decoration: none;
+}
+
+#logo {
+    font-family: "Fira Mono";
+    font-weight: 700;
+    font-size: 30px;    
+}
+
 #front-ctn {
     background-color: #87bba2;
+    background-image: linear-gradient(to bottom right, #C9E4CA, #55828B );
     display: flex;
+    align-items: center;
+    height: calc(95vh - 60px);
+    border-radius: 20px;
+}
+
+#front-text {
+    width: 700px;
+    padding-left: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+#head-text-1 {
+    color: #364958;
+    font-weight: 700;
+    font-size: 48px;
+    margin: 0;
+}
+
+#head-text-2 {
+    font-weight: 900; 
+    font-style: italic;
+    font-size: 96px;
+    color: #364958;
+    margin: 0;
+}
+
+#head-text-3 {
+    font-weight: 400;
+    color: #364958;
+}
+
+#join-button {
+    background-color: #364958;
+    width: fit-content;
+    padding: 15px 30px;
+    border-radius: 40px;
+}
+
+#button-text {
+    color: #FFFFFF;
+    font-weight: 600;
+    margin:0;
+}
+
+#front-img {
+    padding-left: 270px;
+}
+
+#image {
+    height: 800px;
+    width: 750px;
+    
 }
