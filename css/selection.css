@@ -4,6 +4,53 @@ body{
     margin: 0;
 }
 
+#tmoney-ctn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    font-family: 'Montserrat';
+    color:#C9E4CA;
+    background-color: #364958;
+    font-weight: 400;
+    border-radius: 20px;
+
+    padding: 10px;
+    
+    #tmoney-label{
+        padding: 5px;
+        margin-left: 10px;
+    }
+
+    #pro-pay{
+        height: 100%;
+        width: auto;
+        aspect-ratio: 1;
+        border-radius: 20px;
+        margin-right: 10px;
+        
+        display: flex;
+        place-items: center;
+
+        background-color: #C9E4CA;
+        border: 1px solid #364958;
+
+        transform: scale(1);
+    }
+
+    #pro-pay:hover{
+        transform: scale(1.1);
+        border: 2px #55828B solid;
+        cursor: pointer;
+    }
+
+}
+
 #head-ctn{
     display: flex;
     justify-content: space-between;
@@ -213,6 +260,7 @@ body{
         background-color: #EDF2F4;
         padding-left: 10px;
         width: 100%;
+        color: #364958;
     }
 
     #lock{
@@ -227,6 +275,7 @@ body{
     #lock:hover{
         background-color: #55828B;
         border-color: #364958;
+        cursor: pointer;
     }
 
     #lock:hover svg path{
