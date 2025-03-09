@@ -460,7 +460,7 @@ footer {
     #foot-bold-txt{
         font-family: 'Montserrat', 'serif';
         font-weight: 600;
-        font-size: 24px;
+        font-size: 1.5rem;
         color: white;
     }
 
@@ -468,6 +468,7 @@ footer {
         font-family: 'Montserrat', 'serif';
         font-weight: 400;
         color: white;
+        font-size: 1.3rem;
     }
 }
 
@@ -528,7 +529,7 @@ footer {
   margin-bottom: 8px; 
   color: white; 
   text-decoration: none;
-  font-size: 15px; 
+  font-size: 1.2em; 
   font-weight: 400; 
 }
 
