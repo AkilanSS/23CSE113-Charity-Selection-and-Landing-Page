@@ -27,6 +27,10 @@ This project was developed as part of the coursework requirements for 23CSE113.
 ├── pages/           
 │   ├── about.html
 │   └── contact.html
+├── data/
+│   ├── charity.json      
+│   ├── 
+│   └── 
 ├── index.html       
 ├── .gitignore       
 └── README.md    ```
