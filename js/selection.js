@@ -225,6 +225,7 @@ function eventHandler() {
             });
         }
     });
+
 }
 
 function updateTotalMoney() {
@@ -249,6 +250,8 @@ function updateTotalMoney() {
         const container = document.getElementById('tmoney-ctn')
         container.style.display = "none"
     }
+
+   
 }
 
 function addCommaToNum(number) {
@@ -260,3 +263,13 @@ function addCommaToNum(number) {
 function remCommaFromNum(number) {
     return parseFloat(number?.replace(/[^\d.]/g, '') || 0)
 }
+
+var payCtn = document.getElementById('tmoney-ctn');
+
+payCtn.addEventListener('click', function(event) {
+    var button = event.target.closest('button');
+    if (button && payCtn.contains(button)) {  
+        window.sessionStorage.setItem("DonationChoice", cardList)
+    }
+    window.location = "reciept.html"
+});
