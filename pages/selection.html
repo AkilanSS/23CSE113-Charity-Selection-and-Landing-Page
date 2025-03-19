@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/selection.css">
+    <title>GiveSync - Giving Simplified</title>
+    <script type="module" src="../js/selection.js"></script>
+</head>
+<body>
+    <div id="tmoney-ctn"></div>
+    <div id="head-ctn">
+        <div id="head-name">GIVESYNC</div>
+        <div id="quote">"Service to others is the rent you pay for your room here on earth." - Muhammad Ali</div>
+        <div id="profile-icon">
+            <img src="../assets/images/prof_placeholder.svg" alt="">
+        </div>
+    </div>
+    <div id="green-banner">
+        <div id="search-ctn">
+            <p>Where do you feel like donating? </p>
+            <input type="text" name="search-charity" id="srch-char">
+            <button id="search"><img src="../assets/icons/search.svg" alt=""></button>
+        </div>
+        <div id="search-nav">
+            <a href="" id="all" class="cat-lnk">SHOW ALL</a>
+            <a href="" id="social_services" class="cat-lnk">SOCIAL SERVICES</a>
+            <a href="" id="healthcare" class="cat-lnk">HEALTHCARE</a>
+            <a href="" id="education" class="cat-lnk">EDUCATION</a>
+            <a href="" id="human_rights" class="cat-lnk">HUMAN RIGHTS</a>
+        </div>
+    </div>
+    <div id="char-grid" id="social-services-charity">
+        <!-- <div class="char-ctn" id="char-ctn1">
+            <div class="img-desc">
+                <img src="../assets/images/char_img.svg" alt="">
+            <p>Feeding America® is the largest hunger-relief organization in the United States. Feeding America is committed to an America where no one is hungry.</p>
+            </div>
+            <div class="progress-ctn">
+                <div class="text-1">
+                    Funding Goals this Month
+                </div>
+                <div class="text-2">
+                    110k/250k
+                </div>
+                <div class="prog">
+                        <div class="progress-bar" style="width: 70%;"></div>
+                </div>
+            </div>
+            <div class="contr-ctn">
+                <div id="text1">Contribute</div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; gap:20px;">
+                    <div class="contr-text">
+                        <input id="m_area" type="text" placeholder="₹">
+                        <button id="lock"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M4.66667 7.33334V4.66668C4.66584 3.84004 4.97219 3.04259 5.52625 2.42912C6.08031 1.81566 6.84255 1.42995 7.665 1.34687C8.48745 1.26379 9.31143 1.48928 9.97698 1.97955C10.6425 2.46983 11.1022 3.18991 11.2667 4.00001M3.33333 7.33334H12.6667C13.403 7.33334 14 7.9303 14 8.66668V13.3333C14 14.0697 13.403 14.6667 12.6667 14.6667H3.33333C2.59695 14.6667 2 14.0697 2 13.3333V8.66668C2 7.9303 2.59695 7.33334 3.33333 7.33334Z" stroke="#55828B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg></button>
+                    </div>
+                    <div class="char-icons">
+                        <img src="../assets/icons/link.svg" alt="">
+                        <img src="../assets/icons/mail.svg" alt="">
+                        <img src="../assets/icons/heart.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="char-ctn" id="char-ctn2">
+            <div class="img-desc">
+                <img src="../assets/images/char_img.svg" alt="">
+            <p>Feeding America® is the largest hunger-relief organization in the United States. Feeding America is committed to an America where no one is hungry.</p>
+            </div>
+            <div class="progress-ctn">
+                <div class="text-1">
+                    Funding Goals this Month
+                </div>
+                <div class="text-2">
+                    110k/250k
+                </div>
+                <div class="prog">
+                        <div class="progress-bar" style="width: 70%;"></div>
+                </div>
+            </div>
+            <div class="contr-ctn">
+                <div id="text1">Contribute</div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; gap:20px;">
+                    <div class="contr-text">
+                        <input id="m_area" type="text" placeholder="₹">
+                        <button id="lock"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M4.66667 7.33334V4.66668C4.66584 3.84004 4.97219 3.04259 5.52625 2.42912C6.08031 1.81566 6.84255 1.42995 7.665 1.34687C8.48745 1.26379 9.31143 1.48928 9.97698 1.97955C10.6425 2.46983 11.1022 3.18991 11.2667 4.00001M3.33333 7.33334H12.6667C13.403 7.33334 14 7.9303 14 8.66668V13.3333C14 14.0697 13.403 14.6667 12.6667 14.6667H3.33333C2.59695 14.6667 2 14.0697 2 13.3333V8.66668C2 7.9303 2.59695 7.33334 3.33333 7.33334Z" stroke="#55828B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg></button>
+                    </div>
+                    <div class="char-icons">
+                        <img src="../assets/icons/link.svg" alt="">
+                        <img src="../assets/icons/mail.svg" alt="">
+                        <img src="../assets/icons/heart.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="char-ctn" id="char-ctn3">
+            <div class="img-desc">
+                <img src="../assets/images/char_img.svg" alt="">
+            <p>Feeding America® is the largest hunger-relief organization in the United States. Feeding America is committed to an America where no one is hungry.</p>
+            </div>
+            <div class="progress-ctn">
+                <div class="text-1">
+                    Funding Goals this Month
+                </div>
+                <div class="text-2">
+                    110k/250k
+                </div>
+                <div class="prog">
+                        <div class="progress-bar" style="width: 70%;"></div>
+                </div>
+            </div>
+            <div class="contr-ctn">
+                <div id="text1">Contribute</div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; gap:20px;">
+                    <div class="contr-text">
+                        <input id="m_area" type="text" placeholder="₹">
+                        <button id="lock"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M4.66667 7.33334V4.66668C4.66584 3.84004 4.97219 3.04259 5.52625 2.42912C6.08031 1.81566 6.84255 1.42995 7.665 1.34687C8.48745 1.26379 9.31143 1.48928 9.97698 1.97955C10.6425 2.46983 11.1022 3.18991 11.2667 4.00001M3.33333 7.33334H12.6667C13.403 7.33334 14 7.9303 14 8.66668V13.3333C14 14.0697 13.403 14.6667 12.6667 14.6667H3.33333C2.59695 14.6667 2 14.0697 2 13.3333V8.66668C2 7.9303 2.59695 7.33334 3.33333 7.33334Z" stroke="#55828B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg></button>
+                    </div>
+                    <div class="char-icons">
+                        <img src="../assets/icons/link.svg" alt="">
+                        <img src="../assets/icons/mail.svg" alt="">
+                        <img src="../assets/icons/heart.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="char-ctn" id="char-ctn4">
+            <div class="img-desc">
+                <img src="../assets/images/char_img.svg" alt="">
+            <p>Feeding America® is the largest hunger-relief organization in the United States. Feeding America is committed to an America where no one is hungry.</p>
+            </div>
+            <div class="progress-ctn">
+                <div class="text-1">
+                    Funding Goals this Month
+                </div>
+                <div class="text-2">
+                    110k/250k
+                </div>
+                <div class="prog">
+                        <div class="progress-bar" style="width: 70%;"></div>
+                </div>
+            </div>
+            <div class="contr-ctn">
+                <div id="text1">Contribute</div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; gap:20px;">
+                    <div class="contr-text">
+                        <input id="m_area" type="text" placeholder="₹">
+                        <button id="lock"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M4.66667 7.33334V4.66668C4.66584 3.84004 4.97219 3.04259 5.52625 2.42912C6.08031 1.81566 6.84255 1.42995 7.665 1.34687C8.48745 1.26379 9.31143 1.48928 9.97698 1.97955C10.6425 2.46983 11.1022 3.18991 11.2667 4.00001M3.33333 7.33334H12.6667C13.403 7.33334 14 7.9303 14 8.66668V13.3333C14 14.0697 13.403 14.6667 12.6667 14.6667H3.33333C2.59695 14.6667 2 14.0697 2 13.3333V8.66668C2 7.9303 2.59695 7.33334 3.33333 7.33334Z" stroke="#55828B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg></button>
+                    </div>
+                    <div class="char-icons">
+                        <img src="../assets/icons/link.svg" alt="">
+                        <img src="../assets/icons/mail.svg" alt="">
+                        <img src="../assets/icons/heart.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="char-ctn" id="char-ctn5">
+            <div class="img-desc">
+                <img src="../assets/images/char_img.svg" alt="">
+            <p>Feeding America® is the largest hunger-relief organization in the United States. Feeding America is committed to an America where no one is hungry.</p>
+            </div>
+            <div class="progress-ctn">
+                <div class="text-1">
+                    Funding Goals this Month
+                </div>
+                <div class="text-2">
+                    110k/250k
+                </div>
+                <div class="prog">
+                        <div class="progress-bar" style="width: 70%;"></div>
+                </div>
+            </div>
+            <div class="contr-ctn">
+                <div id="text1">Contribute</div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; gap:20px;">
+                    <div class="contr-text">
+                        <input id="m_area" type="text" placeholder="₹">
+                        <button id="lock"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M4.66667 7.33334V4.66668C4.66584 3.84004 4.97219 3.04259 5.52625 2.42912C6.08031 1.81566 6.84255 1.42995 7.665 1.34687C8.48745 1.26379 9.31143 1.48928 9.97698 1.97955C10.6425 2.46983 11.1022 3.18991 11.2667 4.00001M3.33333 7.33334H12.6667C13.403 7.33334 14 7.9303 14 8.66668V13.3333C14 14.0697 13.403 14.6667 12.6667 14.6667H3.33333C2.59695 14.6667 2 14.0697 2 13.3333V8.66668C2 7.9303 2.59695 7.33334 3.33333 7.33334Z" stroke="#55828B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg></button>
+                    </div>
+                    <div class="char-icons">
+                        <img src="../assets/icons/link.svg" alt="">
+                        <img src="../assets/icons/mail.svg" alt="">
+                        <img src="../assets/icons/heart.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="char-ctn" id="char-ctn6">
+            <div class="img-desc">
+                <img src="../assets/images/char_img.svg" alt="">
+            <p>Feeding America® is the largest hunger-relief organization in the United States. Feeding America is committed to an America where no one is hungry.</p>
+            </div>
+            <div class="progress-ctn">
+                <div class="text-1">
+                    Funding Goals this Month
+                </div>
+                <div class="text-2">
+                    110k/250k
+                </div>
+                <div class="prog">
+                        <div class="progress-bar" style="width: 70%;"></div>
+                </div>
+            </div>
+            <div class="contr-ctn">
+                <div id="text1">Contribute</div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; gap:20px;">
+                    <div class="contr-text">
+                        <input id="m_area" type="text" placeholder="₹">
+                        <button id="lock"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M4.66667 7.33334V4.66668C4.66584 3.84004 4.97219 3.04259 5.52625 2.42912C6.08031 1.81566 6.84255 1.42995 7.665 1.34687C8.48745 1.26379 9.31143 1.48928 9.97698 1.97955C10.6425 2.46983 11.1022 3.18991 11.2667 4.00001M3.33333 7.33334H12.6667C13.403 7.33334 14 7.9303 14 8.66668V13.3333C14 14.0697 13.403 14.6667 12.6667 14.6667H3.33333C2.59695 14.6667 2 14.0697 2 13.3333V8.66668C2 7.9303 2.59695 7.33334 3.33333 7.33334Z" stroke="#55828B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg></button>
+                    </div>
+                    <div class="char-icons">
+                        <img src="../assets/icons/link.svg" alt="">
+                        <img src="../assets/icons/mail.svg" alt="">
+                        <img src="../assets/icons/heart.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+    <footer>
+        <div id="foot-ctn">
+            <div id="foot-txt">
+                <div id="foot-name">GIVESYNC</div>
+                <div id="foot-bold-txt">
+                    GiveSync connects compassionate donors with verified charitable organizations worldwide.
+                </div>
+                <div id="foot-light-txt">
+                    Our mission is to simplify giving by creating one central platform where you can discover, compare, and contribute to causes that matter to you. 
+                </div>
+            </div>
+            <div id="foot-lnk">
+                <!-- <table id="lnk">
+                    <thead>
+                        <td>RESOURCES</td>
+                        <td>COMPANY</td>
+                        <td>GET INVOLVED</td>
+                    </thead>
+                    <tr>
+                        <td>Find Charities</td>
+                        <td>About Us</td>
+                        <td>Volunteer</td>
+                    </tr>
+                    <tr>
+                        <td>Impact Reports</td>
+                        <td>Contact</td>
+                        <td>Start Fundraising</td>
+                    </tr>
+                    <tr>
+                        <td>Donation Guides</td>
+                        <td>News and Updates</td>
+                        <td>Partner With Us</td>
+                    </tr>
+                    <tr>
+                        <td>News & Updates</td>
+                        <td>Careers</td>
+                        <td>Become and Advocate</td>
+                    </tr>
+                </table> -->
+
+                <div id="foot-lnk">
+                    <div class="link-container">
+                      <div class="link-column">
+                        <h3>RESOURCES</h3>
+                        <a href="#">Find Charities</a>
+                        <a href="#">Impact Reports</a>
+                        <a href="#">Donation Guides</a>
+                        <a href="#">News & Updates</a>
+                      </div>
+                      <div class="link-column">
+                        <h3>COMPANY</h3>
+                        <a href="#">About Us</a>
+                        <a href="#">Contact</a>
+                        <a href="#">News and Updates</a>
+                        <a href="#">Careers</a>
+                      </div>
+                      <div class="link-column">
+                        <h3>GET INVOLVED</h3>
+                        <a href="#">Volunteer</a>
+                        <a href="#">Start Fundraising</a>
+                        <a href="#">Partner With Us</a>
+                        <a href="#">Become an Advocate</a>
+                      </div>
+                    </div>
+                  </div>
+
+                <div id="newsletter-ctn">
+                    <label for="subscribe">Stay Updated on Global Impact</label><br>
+                    <div id="mail-inp-ctn">
+                        <input type="email" name="subscribe" id="subscribe" placeholder="E-mail address">
+                        <button>SUBSCRIBE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="foot-footer">
+            <img src="../assets/icons/linkedin.svg" alt="">
+            <span id="copyright-txt">Copyright © 2025 GiveSync </span>
+        </div>
+    </footer>
+</body>
+</html>

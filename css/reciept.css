@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap');
+
+body{
+    margin:0;
+	display:flex;
+	height:100vh;
+	align-items:center;
+    background-color: #EDF2F4;
+    font-family: 'Montserrat';
+    color:#364958 ;
+    text-align: center;
+    
+}
+
+#reciept-ctn{
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: auto;
+	background: linear-gradient(111.176deg, #C9E4CA 0%, #55828B 100%);
+    padding: 30px;
+    padding-bottom: 10px;
+    border-radius: 20px;
+
+    h1{
+        font-size: 1.35rem;
+        padding-bottom: 20px;
+    }
+}
+
+#content-ctn{
+    background-color: white;
+    border-radius: 20px;
+    padding: 30px;
+    padding-top: 20px;
+}
+
+#prof-details{
+    display: flex;
+    justify-content: space-around;
+
+    flex-wrap: wrap;
+
+    .prof-sub-ctn{
+        margin-top: 10px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        
+    }
+
+    padding-bottom: 20px;
+}
+
+.light{
+    font-weight: 200;
+    font-size: 13px;
+    color: #55828B;
+}
+
+.dark{
+    font-weight:700 ;
+    font-size: 13px;
+}
+
+
+
+.item-ctn{
+
+    margin: 20px 0;
+
+    display: flex;
+    align-items: center;
+
+    justify-content: space-between;
+
+    .char-detctn{
+        display: flex;
+        align-items: center;
+        gap: 30px;
+
+        .title{
+            justify-self: flex-start;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            .char-title{
+                font-size: 15px;
+            }
+
+           
+
+            input{
+                background-color: white;
+                border: none;
+                font-size: 12px;
+                font-family: 'Montserrat';
+                width: 25ch;
+                color: #364958;
+                font-style: italic;
+            }
+
+            input:focus{
+                outline: none;
+                background-color: #EDF2F4;
+                border-radius: 10px;
+            }
+        }
+    }
+
+
+    .donated-money{
+        display: flex;
+        flex-direction: column;
+
+        align-items: flex-end;
+
+        .contr-text{
+            font-size: 13px;
+        }
+    }
+    
+}
+
+@media (max-width: 768px) {
+    .item-ctn{
+        img{
+            display: none;
+        }
+    }
+
+    #reciept-ctn{
+        padding: 20px;
+    }
+
+    #add-lnks{
+        a{
+            margin-top: 5px;
+        }
+    }
+
+
+}
+
+.char-money{
+    font-size: 20px;
+}
+
+#fbill-ctn{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+
+    #add-lnks{
+        a{
+            text-decoration: none;
+            float: left;
+
+            color: #55828B;
+            font-size: 12px;
+
+            font-weight: 300;
+
+            position: relative;
+            bottom: 5px;
+        }
+    }
+
+}
+
+.def-txt{
+    font-size: 12px;
+    color: #55828B;
+
+    text-align: right;
+
+    padding-right: 20px;
+}
+
+.mon{
+    color: #55828B;
+    font-weight: 700;
+    font-size: 12px;
+
+    text-align: right;
+}
+
+.gtotal{
+    text-align: right;
+}
+
+#comp{
+    display: flex;
+    justify-content: space-between;
+}
+
+button{
+    
+    margin: 20px;
+    padding: 10px;
+    background-color: #C9E4CA;
+    font-weight: 700;
+    color: #364958;
+    font-size: 16px;
+    width: 15rem;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 25%);
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+#exit{
+    margin: 20px;
+    padding: 10px;
+    color: #364958;
+}

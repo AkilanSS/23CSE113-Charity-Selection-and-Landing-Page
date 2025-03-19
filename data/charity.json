@@ -1,0 +1,219 @@
+{
+  "charities": {
+    "social_services": [
+      {
+        "idx" : 1,
+        "id": "char-ctn1",
+        "name" : "Feeding America",
+        "image": "../assets/images/char_img.svg",
+        "description": "Feeding America® is the largest hunger-relief organization in the United States. Feeding America is committed to an America where no one is hungry.",
+        "funding": {
+          "current": "110k",
+          "goal": "250k",
+          "percentage": 44
+        },
+        "icons": [
+          "../assets/icons/link.svg",
+          "../assets/icons/mail.svg",
+          "../assets/icons/heart.svg"
+        ]
+      },
+      {
+        "idx" : 2,
+        "id": "char-ctn2",
+        "name" : "The International Red Cross",
+        "image": "../assets/images/icrc.svg",
+        "description": "The International Red Cross provides humanitarian aid, disaster relief, and emergency assistance worldwide.",
+        "funding": {
+          "current": "150k",
+          "goal": "300k",
+          "percentage": 50
+        },
+        "icons": [
+          "../assets/icons/link.svg",
+          "../assets/icons/mail.svg",
+          "../assets/icons/heart.svg"
+        ]
+      },
+      {
+        "idx" : 3,
+        "id": "char-ctn3",
+        "name" : "Save The Children",
+        "image": "../assets/images/stc.svg",
+        "description": "Save the Children supports children's rights and provides education, healthcare, and emergency aid worldwide.",
+        "funding": {
+          "current": "90k",
+          "goal": "200k",
+          "percentage": 45
+        },
+        "icons": [
+          "../assets/icons/link.svg",
+          "../assets/icons/mail.svg",
+          "../assets/icons/heart.svg"
+        ]
+      },
+      {
+        "idx" : 4,
+        "id": "char-ctn4",
+        "image": "../assets/images/oxfam.svg",
+        "description": "Oxfam is an international confederation working to end poverty and provide aid in disasters.",
+        "funding": {
+          "current": "180k",
+          "goal": "400k",
+          "percentage": 45
+        },
+        "icons": [
+          "../assets/icons/link.svg",
+          "../assets/icons/mail.svg",
+          "../assets/icons/heart.svg"
+        ]
+      },
+      {
+        "idx" : 5,
+        "id": "char-ctn5",
+        "image": "../assets/images/char_img.svg",
+        "description": "Habitat for Humanity helps families build affordable housing worldwide.",
+        "funding": {
+          "current": "120k",
+          "goal": "300k",
+          "percentage": 40
+        },
+        "icons": [
+          "../assets/icons/link.svg",
+          "../assets/icons/mail.svg",
+          "../assets/icons/heart.svg"
+        ]
+      }
+    ],
+    "healthcare": [
+      {
+        "idx" : 6,
+        "id": "char-ctn6",
+        "image": "../assets/images/char_img.svg",
+        "description": "Doctors Without Borders provides medical aid to people affected by conflicts, epidemics, and disasters worldwide.",
+        "funding": {
+          "current": "200k",
+          "goal": "500k",
+          "percentage": 40
+        },
+        "icons": [
+          "../assets/icons/link.svg",
+          "../assets/icons/mail.svg",
+          "../assets/icons/heart.svg"
+        ]
+      },
+      {
+        "idx" : 7,
+        "id": "char-ctn7",
+        "image": "../assets/images/char_img.svg",
+        "description": "The World Health Organization supports global health initiatives, emergency responses, and disease eradication efforts.",
+        "funding": {
+          "current": "500k",
+          "goal": "1M",
+          "percentage": 50
+        },
+        "icons": [
+          "../assets/icons/link.svg",
+          "../assets/icons/mail.svg",
+          "../assets/icons/heart.svg"
+        ]
+      },
+      {
+        "idx" : 8,
+        "id": "char-ctn8",
+        "image": "../assets/images/char_img.svg",
+        "description": "Action Against Hunger is committed to ending global hunger by providing nutrition programs and clean water initiatives.",
+        "funding": {
+          "current": "130k",
+          "goal": "400k",
+          "percentage": 32
+        },
+        "icons": [
+          "../assets/icons/link.svg",
+          "../assets/icons/mail.svg",
+          "../assets/icons/heart.svg"
+        ]
+      },
+      {
+        "idx" : 9,
+        "id": "char-ctn9",
+        "image": "../assets/images/char_img.svg",
+        "description": "Water.org provides clean and safe water access to communities in developing countries.",
+        "funding": {
+          "current": "140k",
+          "goal": "350k",
+          "percentage": 40
+        },
+        "icons": [
+          "../assets/icons/link.svg",
+          "../assets/icons/mail.svg",
+          "../assets/icons/heart.svg"
+        ]
+      },
+      {
+        "idx" : 10,
+        "id": "char-ctn10",
+        "image": "../assets/images/char_img.svg",
+        "description": "World Food Programme is the world's largest humanitarian organization fighting hunger worldwide.",
+        "funding": {
+          "current": "300k",
+          "goal": "750k",
+          "percentage": 40
+        },
+        "icons": [
+          "../assets/icons/link.svg",
+          "../assets/icons/mail.svg",
+          "../assets/icons/heart.svg"
+        ]
+      }
+    ],
+    "education": [
+      {
+        "idx" : 11,
+        "id": "char-ctn11",
+        "image": "../assets/images/char_img.svg",
+        "description": "Teach For All works to expand educational opportunity worldwide by supporting local organizations.",
+        "funding": {
+          "current": "180k",
+          "goal": "400k",
+          "percentage": 45
+        }
+      },
+      {
+        "idx" : 12,
+        "id": "char-ctn12",
+        "image": "../assets/images/char_img.svg",
+        "description": "Room to Read promotes literacy and gender equality in education in low-income communities.",
+        "funding": {
+          "current": "100k",
+          "goal": "300k",
+          "percentage": 33
+        }
+      }
+    ],
+    "human_rights": [
+      {
+        "idx" : 13,
+        "id": "char-ctn13",
+        "image": "../assets/images/char_img.svg",
+        "description": "Human Rights Watch investigates and reports on abuses happening worldwide.",
+        "funding": {
+          "current": "250k",
+          "goal": "500k",
+          "percentage": 50
+        }
+      },
+      {
+        "idx" : 14,
+        "id": "char-ctn14",
+        "image": "../assets/images/char_img.svg",
+        "description": "Amnesty International works to protect human rights and advocate for justice worldwide.",
+        "funding": {
+          "current": "200k",
+          "goal": "450k",
+          "percentage": 44
+        }
+      }
+    ]
+  }
+}
