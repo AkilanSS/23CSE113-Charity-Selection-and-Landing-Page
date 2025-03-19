@@ -18,6 +18,15 @@ document.addEventListener("DOMContentLoaded", async function (event) {
         choiceData = window.sessionStorage.getItem("DonationChoice");
         displayItem(choiceData, data)
 
+        const dateTxt = document.getElementById("date")
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var yyyy = today.getFullYear();
+
+        today = dd + '/' + mm + '/' + yyyy;
+
+        dateTxt.innerText = today
 
     } catch (error) {
         console.error("Error in DOMContentLoaded handler:", error);
@@ -44,7 +53,7 @@ function displayItem(cD, data){
                                 <img src="${cha.image}" alt="">
                                 <div class="title">
                                     <span class="char-title dark">${cha.name}</span>
-                                    <input type="text" name="" id="comments" placeholder="Want to send any messages?">
+                                    <input type="text" name="" class="comments" placeholder="Want to send any messages?">
                                 </div>
                             </div>
                             <div class="donated-money">
@@ -68,7 +77,7 @@ function displayItem(cD, data){
     const gtmoneyCtn = document.querySelector("#gtotal")
     tmoneyCtn.innerText = "₹ "+addCommaToNum(tmoney)
     commCtn.innerText = "₹ "+addCommaToNum(comm)
-    gtmoneyCtn.innerText = "₹ "+addCommaToNum(comm + tmoney)
+    gtmoneyCtn.innerText = "₹"+addCommaToNum(comm + tmoney)
     
 }
 

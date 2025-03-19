@@ -16,7 +16,6 @@ body{
     width: 600px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 100px;
     overflow: auto;
 	background: linear-gradient(111.176deg, #C9E4CA 0%, #55828B 100%);
     padding: 30px;
@@ -24,8 +23,8 @@ body{
     border-radius: 20px;
 
     h1{
-        font-size: 20px;
-        padding-bottom: 10px;
+        font-size: 1.35rem;
+        padding-bottom: 20px;
     }
 }
 
@@ -100,6 +99,14 @@ body{
                 font-size: 12px;
                 font-family: 'Montserrat';
                 width: 25ch;
+                color: #364958;
+                font-style: italic;
+            }
+
+            input:focus{
+                outline: none;
+                background-color: #EDF2F4;
+                border-radius: 10px;
             }
         }
     }
@@ -116,6 +123,26 @@ body{
         }
     }
     
+}
+
+@media (max-width: 768px) {
+    .item-ctn{
+        img{
+            display: none;
+        }
+    }
+
+    #reciept-ctn{
+        padding: 20px;
+    }
+
+    #add-lnks{
+        a{
+            margin-top: 5px;
+        }
+    }
+
+
 }
 
 .char-money{
@@ -166,8 +193,13 @@ body{
     text-align: right;
 }
 
+#comp{
+    display: flex;
+    justify-content: space-between;
+}
+
 button{
-    float: right;
+    
     margin: 20px;
     padding: 10px;
     background-color: #C9E4CA;
@@ -182,4 +214,10 @@ button{
 
 button:hover{
     cursor: pointer;
+}
+
+#exit{
+    margin: 20px;
+    padding: 10px;
+    color: #364958;
 }

@@ -38,6 +38,7 @@
       {
         "idx" : 3,
         "id": "char-ctn3",
+        "name" : "Save The Children",
         "image": "../assets/images/stc.svg",
         "description": "Save the Children supports children's rights and provides education, healthcare, and emergency aid worldwide.",
         "funding": {

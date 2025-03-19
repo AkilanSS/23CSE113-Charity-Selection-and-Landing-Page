@@ -116,6 +116,31 @@ document.addEventListener("DOMContentLoaded", async function() {
             }
         })
 
+        const searchBar = document.getElementById("srch-char")
+        searchBar.addEventListener("keyup", function(){
+            if (searchBar.value == ''){
+                dispAll.click()
+            }
+            var foundChar = []
+            console.log("searching")
+            Object.keys(data.charities).forEach(catg => {
+                let catgt = eval(`data.charities.${catg}`)
+                catgt.forEach(char => {
+                    if(char.name){
+                        
+                        if (searchBar.value != '' & (char.name.toLowerCase()).includes(searchBar.value)){
+                            foundChar.push(char)
+                        }
+                    }
+                    
+                })
+            })
+            if(foundChar.length != 0){
+                addCtnToGrid(foundChar, true)
+            }
+            
+        })
+
         const charCat = data.charities
         for (var cat in charCat){
             console.log(eval(`data.charities.${cat}`))
