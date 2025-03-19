@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/reciept.css">
+    <script src="../js/reciept.js"></script>
 </head>
 <body>
     <div id="reciept-ctn">
@@ -30,7 +31,7 @@
             </div>
             <hr>
             <div id="choice-ctn">
-                <div class="item-ctn">
+                <!-- <div class="item-ctn">
                     <div class="char-detctn">
                         <img src="../assets/images/char_img.svg" alt="">
                         <div class="title">
@@ -81,7 +82,7 @@
                         <span class="contr-text light">Your Contribution</span>
                         <span class="char-money dark">₹15,25,120</span>
                     </div>
-                </div>
+                </div> -->
 
             </div>
             <hr>
@@ -94,15 +95,15 @@
                     <table id="total-money-tb">
                         <tr>
                             <td class="def-txt">Total</td>
-                            <td class="mon">₹ 61,00,480</td>
+                            <td class="mon" id="total">₹ 61,00,480</td>
                         </tr>
                         <tr>
-                            <td class="def-txt">Tax</td>
-                            <td class="mon">₹ 5,120</td>
+                            <td class="def-txt">Commission</td>
+                            <td class="mon" id="comm">₹ 5,120</td>
                         </tr>
                         <tr>
-                            <td class="def-txt gtotal">Grand Total</td>
-                            <td class="char-money dark">₹ 61,05,600</td>
+                            <td class="def-txt gtotal" >Grand Total</td>
+                            <td class="char-money dark" id="gtotal">₹ 61,05,600</td>
                         </tr>
                         
                     </table>

@@ -97,6 +97,7 @@ document.addEventListener("DOMContentLoaded", async function() {
     try {
         data = await grabData();
         const catLinks = document.querySelectorAll('.cat-lnk')
+        console.log(data)
 
         catLinks.forEach(link => {
             link.addEventListener('click', function(event) {
@@ -269,7 +270,7 @@ var payCtn = document.getElementById('tmoney-ctn');
 payCtn.addEventListener('click', function(event) {
     var button = event.target.closest('button');
     if (button && payCtn.contains(button)) {  
-        window.sessionStorage.setItem("DonationChoice", cardList)
+        window.sessionStorage.setItem("DonationChoice", JSON.stringify(Array.from(cardList.entries())))
     }
     window.location = "reciept.html"
 });

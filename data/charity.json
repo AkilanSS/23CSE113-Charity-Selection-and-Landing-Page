@@ -4,6 +4,7 @@
       {
         "idx" : 1,
         "id": "char-ctn1",
+        "name" : "Feeding America",
         "image": "../assets/images/char_img.svg",
         "description": "Feeding America® is the largest hunger-relief organization in the United States. Feeding America is committed to an America where no one is hungry.",
         "funding": {
@@ -20,6 +21,7 @@
       {
         "idx" : 2,
         "id": "char-ctn2",
+        "name" : "The International Red Cross",
         "image": "../assets/images/icrc.svg",
         "description": "The International Red Cross provides humanitarian aid, disaster relief, and emergency assistance worldwide.",
         "funding": {
