@@ -33,7 +33,12 @@ body{
     border-radius: 20px;
     padding: 30px;
     padding-top: 20px;
+    overflow-y:scroll;
+    max-height: 70vh;
+    scrollbar-color: #C9E4CA #edf2f400;
+    scrollbar-width: thin;
 }
+
 
 #prof-details{
     display: flex;

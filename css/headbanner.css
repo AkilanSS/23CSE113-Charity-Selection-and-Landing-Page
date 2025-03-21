@@ -213,14 +213,15 @@ a:hover {
 
 #card-ctn {
     display: flex;
-    justify-content: space-evenly;
-    gap: 20px;
+    justify-content: space-between;
+    margin: 0 4px;
+    row-gap: 20px;
     font-weight: 200;
     flex-wrap: wrap;
 }
 
 .card {
-    flex: 0 0 calc(25% - 20px);
+    flex: 0 0 calc(25% - 10px);
     aspect-ratio: 1 / 1;
     background-color: #FFFFFF;
     border-radius: 20px;
