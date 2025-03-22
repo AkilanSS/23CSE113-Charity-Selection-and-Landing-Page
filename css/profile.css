@@ -383,3 +383,117 @@ hr{
     border-radius: 20px;
     transition: width 0.5s ease;
 }
+
+#security-ctn{
+    margin-top: 20px;
+}
+
+.sec-row{
+    display: flex;
+    margin-bottom: 40px;
+    gap: 30px;
+    align-items: center;
+    justify-content: space-between;
+    
+    .sec-txt{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .sec-title{
+        font-size: 20px;
+        color: #364958;
+        font-weight: 500;
+    }
+
+    .sec-desc{
+        font-size: 16px;
+        color: #55828B;
+        font-weight: 300;
+    }
+
+    .sec-act{
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        border: 1px #55828B solid;
+        padding: 10px 20px;
+        border-radius: 20px;
+        color: #55828B;
+        font-weight: 500;
+        font-size: 15px;
+        box-sizing: border-box;
+    }
+
+    .sec-act:hover{
+        border: 2px #55828B solid;
+        box-sizing: border-box;
+    }
+
+    .sec-act-lnk{
+        font-weight: 600;
+        color: #55828B;
+        text-decoration: none;
+    }
+
+    .del{
+        color: #FF2626;
+    }
+}
+
+.switch {
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 3.5em;
+    height: 2em;
+  }
+
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    border: 1px solid #adb5bd;
+    transition: .4s;
+    border-radius: 30px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    border-radius: 20px;
+    left: 0.27em;
+    bottom: 0.25em;
+    background-color: #87BBA2;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #87BBA2;
+    border: 1px solid #87BBA2;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #87BBA2;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(1.4em);
+    background-color: #EDF2F4;
+  }
