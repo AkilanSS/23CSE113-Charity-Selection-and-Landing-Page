@@ -125,9 +125,6 @@ body{
         right: -110px;
     }
 
-    hr{
-        width: 100%;
-    }
 
     #main-head{
         font-weight: 600;
@@ -135,6 +132,11 @@ body{
         margin-bottom: 20px;
         color: #364958;
     }
+}
+
+hr{
+    width: 100%;
+    
 }
 
 #stat-ctn{
@@ -168,70 +170,74 @@ body{
         font-size: 24px;
         color: #364958;
     }
+}
 
-    #few-don-ctn{
-        background-color: #EDF2F4;
-        padding: 50px;
-        padding-bottom: 30px;
-        border-radius: 20px;
-        border: 1px solid #364958;
-    }
+#few-don-ctn{
+    background-color: #EDF2F4;
+    padding: 50px;
+    padding-bottom: 30px;
+    border-radius: 20px;
+    border: 1px solid #364958;
+}
 
-    .don-list-grp{
-        margin-bottom: 50px;
-    }
+#few-don-ctn-hist{
+    margin-top: 40px;
+}
 
-    #date{
+.don-list-grp{
+    margin-bottom: 50px;
+}
+
+#date{
+    font-weight: 600;
+    font-size: 20px;
+    color: #55828B;
+    margin-bottom: 20px;
+}
+
+.char-row{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    .num{
         font-weight: 600;
-        font-size: 20px;
         color: #55828B;
-        margin-bottom: 20px;
+        font-size: 20px;
     }
 
-    .char-row{
+    .char-name{
+        color: #364958;
+        font-weight: 700;
+        font-size: 20px;
+    }
+
+    .char-desc{
+        flex: 1 1 auto;
+        font-weight: 300;
+        color: #364958;
+    }
+
+    .contr-ctn{
         display: flex;
-        align-items: center;
-        gap: 30px;
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
 
-        .num{
-            font-weight: 600;
-            color: #55828B;
-            font-size: 20px;
-        }
-
-        .char-name{
-            color: #364958;
-            font-weight: 700;
-            font-size: 20px;
-        }
-
-        .char-desc{
-            flex: 1 1 auto;
+        .contr-txt, .don-txt{
             font-weight: 300;
-            color: #364958;
+            color:#55828B;
+            font-size: 16px;
         }
 
-        .contr-ctn{
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            align-items: flex-start;
+        .contr-mon, .don-id{
+            font-weight: 700;
+            color:#364958;
+            font-size: 24px;
+        } 
+        .don-id{
+            font-size: 20px;
+        }  
 
-            .contr-txt, .don-txt{
-                font-weight: 200;
-                color:#55828B;
-                font-size: 16px;
-            }
-
-            .contr-mon, .don-id{
-                font-weight: 700;
-                color:#364958;
-                font-size: 24px;
-            } 
-            .don-id{
-                font-size: 20px;
-            }  
-
-        }
     }
 }
