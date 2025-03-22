@@ -241,3 +241,145 @@ hr{
 
     }
 }
+
+
+
+#char-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    max-width: 100%;
+    margin-top: 40px;
+}
+.char-ctn{
+    background-color: white;
+    border-radius: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    min-width: 0;
+    height: 100%;
+    padding: 20px;
+    font-family: "Montserrat", "serif";
+    box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 25%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.img-desc{
+    display: flex;
+    width: 100%;
+    height: 150px;
+    
+    img{
+        float: left;
+        margin-right: 15px;
+        margin-left: 15px;
+        margin-bottom: 20px;
+
+        max-width: 200px;
+        height: auto;
+
+    }
+    p{
+        
+        font-family: 'Montserrat', 'serif';
+        font-size: 13px;
+        font-weight: 300;
+
+        overflow-x: hidden;
+    }
+} 
+
+::-webkit-scrollbar{
+    width: 1px;
+}
+
+@media (max-width : 1200px) {
+    .img-desc{
+        height: fit-content;
+    }
+     
+}
+
+.progress-ctn{
+    .text-1{
+        font-size:13px;
+        font-weight: 600;
+    }
+    .text-2{
+        float: right;
+        font-size: 10px;
+        font-weight: 600;
+        margin-right: 10px;
+        margin-bottom: 5px;
+    }
+}
+
+.contr-ctn{
+    margin-top: 10px;
+    align-self: f;
+    
+    #text1{
+        font-weight: 700;
+        font-size: 13px;
+    }
+    
+    .char-icons{
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+}
+.contr-text{
+    display: flex;
+    #m_area{
+        padding: 5px;
+        height: 25px;
+        border: 2px solid #364958;
+        border-radius: 10px 0px 0px 10px;
+        border-right: none;
+        font-family: "Montserrat", "serif";
+        font-weight: 600;
+        background-color: #EDF2F4;
+        padding-left: 10px;
+        width: 100%;
+        color: #364958;
+    }
+
+    #lock{
+        background-color: #C9E4CA;
+        width: 40px;
+        border-color: #55828B;
+        border-width: 2px;
+        border-style: solid;
+        border-radius: 0px 10px 10px 0px;
+    }
+
+    #lock:hover{
+        background-color: #55828B;
+        border-color: #364958;
+        cursor: pointer;
+    }
+
+    #lock:hover svg path{
+        stroke: #C9E4CA;
+    }
+}
+
+
+.prog {
+    width: 100%;
+    background-color: #EDF2F4;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 20px;
+  }
+  
+.progress-bar {
+    height: 100%;
+    width: 0;
+    background-color: #C9E4CA;
+    border-radius: 20px;
+    transition: width 0.5s ease;
+}
