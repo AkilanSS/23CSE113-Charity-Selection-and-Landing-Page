@@ -578,13 +578,42 @@ input:checked+.slider:before {
     display: flex;
     gap: 50px;
     justify-content: space-evenly;
-    align-items: center;
+    
 }
 
 #edit-ctn{
+    margin-top: 65px;
+    margin-bottom: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     
+    #desc, #desc:disabled{
+        width: 25ch;
+        text-align: center;
+        background-color: #EDF2F4;
+        color: #364958;
+        font-family: 'Montserrat';
+        font-weight: 400;
+        border: none;
+        resize: none;
+        padding: 10px;
+    }
+
     #desc{
-        width: 20ch;
+        background-color: #fff;
+        border-radius: 20px;
+    }
+
+    #edit-icon{
+        align-self: flex-end;
+        transform: scale(1.1);
+        transition: transform 0.2s ease-in-out;
+    }
+
+    #edit-icon:hover{
+        cursor: pointer;
+        transform: scale(1.3);
     }
 }
 
@@ -593,26 +622,68 @@ input:checked+.slider:before {
     padding: 30px 60px;
     border-radius: 20px;
     border: 1px solid #364958;
-
-
+    color: #364958;
+    
     display: flex;
     flex-direction: column;
 
     text-align: center;
+    align-items: center;
 
     img{
-        transform: scale(0.7);
+        
+        object-fit: contain;
     }
 
     #nickname-txt{
         font-weight: 800;
         font-size: 20px;
         margin-bottom: 10px;
+        margin-top: 10px;
     }
 
-    #desc{
-        font-size: 16px;
-        font-weight: 300;
+}
+
+#changes-ctn{
+    align-self: center;
+
+
+    button{
+        background-color: #fff;
+        border: 2px solid #55828B;
+        color: #55828B;
+        border-radius: 20px;
+        padding: 8px 16px;
+
+        font-family: 'Montserrat';
+
+        margin: 0px 10px;
     }
 
+    button:disabled{
+        display: none;
+    }
+
+    #cancel-btn{
+        border:1px solid #FF2626;
+        background-color: #ff26261d;
+    }
+
+    #confirm-btn{
+        border:1px solid #87BBA2;
+        background-color: #87bba230;
+    }
+
+    #confirm-btn:hover{
+        cursor: pointer;
+        background-color: #55828B;
+        color: white;
+    }
+
+    #cancel-btn:hover{
+        background-color: #FF2626;
+        color: white;
+        border-color: #FF2626;
+        cursor:pointer;
+    }
 }

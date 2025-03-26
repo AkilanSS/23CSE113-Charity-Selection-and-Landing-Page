@@ -397,18 +397,85 @@ export function SavedCharities(userData){
     `
 }
 
-export function AccountSettings(userData){
+export function AccountSettings(){
     return `
         <div id="brand-logo">
             GIVESYNC
         </div>
         <div id="main-head">Account Settings</div>
         <hr>
-        <div id="form-ctn">
-
+        <div id="first-ctn">
+            <div id="form-ctn">
+                <div class="form-row-2">
+                    <div class="inp-ctn">
+                        <span class="ilabel">First Name</span>
+                        <input type="text" name="fname" id="fname-inp" value="Akilan">
+                    </div>
+                    <div class="inp-ctn">
+                        <span class="ilabel">Last Name</span>
+                        <input type="text" name="lname" id="lname-inp" value="S S">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="inp-ctn">
+                        <span class="ilabel">E-mail address</span>
+                        <input type="email" value="akilanss22@gmail.com">
+                    </div>
+                </div>
+                <div class="form-row-2">
+                    <div class="inp-ctn">
+                        <span class="ilabel">Contact</span>
+                        <input type="text" name="fname" id="cont-inp" value="5489491654">
+                    </div>
+                    <div class="inp-ctn">
+                        <span class="ilabel">Country</span>
+                        <input type="text" name="lname" id="count-inp" value="India">
+                    </div>
+                </div>
+                <div class="form-row-2">
+                    <div class="inp-ctn">
+                        <span class="ilabel">City/State</span>
+                        <input type="text" name="city" id="city-inp" value="Coimbatore">
+                    </div>
+                    <div class="inp-ctn">
+                        <span class="ilabel">Postal Code</span>
+                        <input type="text" name="pcode" id="post-inp" value="698585">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="inp-ctn">
+                        <span class="ilabel">Organization</span>
+                        <input type="text" id="org" value="Big Chungus Inc.">
+                    </div>
+                </div>
+                <div class="form-row-2">
+                    <div class="inp-ctn">
+                        <span class="ilabel">Industry</span>
+                        <input type="text" name="ind" id="ind-inp" value="Big">
+                    </div>
+                    <div class="inp-ctn">
+                        <span class="ilabel">Profession</span>
+                        <input type="text" name="prof" id="prof-inp" value="Chungus">
+                    </div>
+                </div>
+            </div>
+            <div id="edit-ctn">
+                <div id="profpic-ctn">
+                    <img id="edit-icon" src="../assets/icons/edit.svg" alt="" srcset="">
+                    <img src="../assets/images/prof_placeholder_large.png" alt="" srcset="">
+                    <div id="nickname-txt">Akilan</div>
+                    <textarea id="desc" disabled rows="8" cols="10" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id nisl in lorem rhoncus consectetur non eget dui. Etiam nec diam sagittis magna lobortis maximus
+                    </textarea>
+                </div> 
+                <div id="changes-ctn">
+                    <button id="cancel-btn" disabled>Cancel</button>
+                    <button id="confirm-btn"  disabled >Confirm Changes</button>
+                </div>
+                
+            </div>
         </div>
         <hr>
-        <div id="main-head">Security</div>
+        <div id="main-head" class="sec-head">Security</div>
         <div id="security-ctn">
             <div class="sec-row">
                 <div class="sec-txt">
@@ -432,11 +499,12 @@ export function AccountSettings(userData){
             <div class="sec-row">
                 <div class="sec-txt">
                     <span class="sec-title">2-Step Verification</span>
-                    <span class="sec-desc">Make your password extra secure. Along with it you'll need to enter a code</span>
+                    <span class="sec-desc">Make your password extra secure. Along with it you'll need to enter a
+                        code</span>
                 </div>
                 <div class="sec-act-btn">
                     <label class="switch">
-                        <input type="checkbox" >
+                        <input type="checkbox">
                         <span class="slider"></span>
                     </label>
                 </div>
@@ -444,7 +512,8 @@ export function AccountSettings(userData){
             <div class="sec-row">
                 <div class="sec-txt">
                     <span class="sec-title">Deactivate your Account</span>
-                    <span class="sec-desc">This will shutdown your account. Your accoumt will be reactivated when you login again</span>
+                    <span class="sec-desc">This will shutdown your account. Your accoumt will be reactivated when you
+                        login again</span>
                 </div>
                 <a class="sec-act-lnk" href="">
                     Deactivate
