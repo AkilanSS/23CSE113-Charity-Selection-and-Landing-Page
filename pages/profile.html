@@ -24,10 +24,10 @@
         </div>
         <div class="menu-grp">
             <div class="menu-grp-head">SETTINGS</div>
-            <a href="" class="menu-item" id="menu-item1">Account Settings</a>
-            <a href="" class="menu-item" id="menu-item2">Payment Methods</a>
-            <a href="" class="menu-item" id="menu-item3">Notifications</a>
-            <a href="" class="menu-item" id="menu-item4">Help & Support</a>
+            <a href="" class="menu-item" id="menu-item6">Account Settings</a>
+            <a href="" class="menu-item" id="menu-item7">Payment Methods</a>
+            <a href="" class="menu-item" id="menu-item8">Notifications</a>
+            <a href="" class="menu-item" id="menu-item9">Help & Support</a>
         </div>
         <div style="margin-bottom: auto"></div>
         <div id="log-out">
@@ -35,6 +35,9 @@
             <a href="">LOG OUT</a>
         </div>
     </div>
+    <!-- 
+    <div id="main-ctn"></div> -->
+
     <!-- <div id="main-ctn">
         <div id="brand-logo">
             GIVESYNC
@@ -431,11 +434,77 @@
         </div>
         <div id="main-head">Account Settings</div>
         <hr>
-        <div id="form-ctn">
-
+        <div id="first-ctn">
+            <div id="form-ctn">
+                <div class="form-row-2">
+                    <div class="inp-ctn">
+                        <span class="ilabel">First Name</span>
+                        <input type="text" name="fname" id="fname-inp" value="Akilan">
+                    </div>
+                    <div class="inp-ctn">
+                        <span class="ilabel">Last Name</span>
+                        <input type="text" name="lname" id="lname-inp" value="S S">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="inp-ctn">
+                        <span class="ilabel">E-mail address</span>
+                        <input type="email" value="akilanss22@gmail.com">
+                    </div>
+                </div>
+                <div class="form-row-2">
+                    <div class="inp-ctn">
+                        <span class="ilabel">Contact</span>
+                        <input type="text" name="fname" id="cont-inp" value="5489491654">
+                    </div>
+                    <div class="inp-ctn">
+                        <span class="ilabel">Country</span>
+                        <input type="text" name="lname" id="count-inp" value="India">
+                    </div>
+                </div>
+                <div class="form-row-2">
+                    <div class="inp-ctn">
+                        <span class="ilabel">City/State</span>
+                        <input type="text" name="city" id="city-inp" value="Coimbatore">
+                    </div>
+                    <div class="inp-ctn">
+                        <span class="ilabel">Postal Code</span>
+                        <input type="text" name="pcode" id="post-inp" value="698585">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="inp-ctn">
+                        <span class="ilabel">Organization</span>
+                        <input type="text" id="org" value="Big Chungus Inc.">
+                    </div>
+                </div>
+                <div class="form-row-2">
+                    <div class="inp-ctn">
+                        <span class="ilabel">Industry</span>
+                        <input type="text" name="ind" id="ind-inp" value="Big">
+                    </div>
+                    <div class="inp-ctn">
+                        <span class="ilabel">Profession</span>
+                        <input type="text" name="prof" id="prof-inp" value="Chungus">
+                    </div>
+                </div>
+            </div>
+            <div id="edit-ctn">
+                <div id="profpic-ctn">
+                    <img src="../assets/images/prof_placeholder_large.png" alt="" srcset="">
+                    <div id="nickname-txt">Akilan</div>
+                    <div id="desc">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id nisl in lorem rhoncus consectetur non eget dui. Etiam nec diam sagittis magna lobortis maximus
+                    </div>
+                </div>
+                <div id="changes-ctn">
+                    <button id="cancel-btn">Cancel</button>
+                    <button id="confirm-btn">Confirm Changes</button>
+                </div>
+            </div>
         </div>
         <hr>
-        <div id="main-head">Security</div>
+        <div id="main-head" class="sec-head">Security</div>
         <div id="security-ctn">
             <div class="sec-row">
                 <div class="sec-txt">
@@ -459,11 +528,12 @@
             <div class="sec-row">
                 <div class="sec-txt">
                     <span class="sec-title">2-Step Verification</span>
-                    <span class="sec-desc">Make your password extra secure. Along with it you'll need to enter a code</span>
+                    <span class="sec-desc">Make your password extra secure. Along with it you'll need to enter a
+                        code</span>
                 </div>
                 <div class="sec-act-btn">
                     <label class="switch">
-                        <input type="checkbox" >
+                        <input type="checkbox">
                         <span class="slider"></span>
                     </label>
                 </div>
@@ -471,7 +541,8 @@
             <div class="sec-row">
                 <div class="sec-txt">
                     <span class="sec-title">Deactivate your Account</span>
-                    <span class="sec-desc">This will shutdown your account. Your accoumt will be reactivated when you login again</span>
+                    <span class="sec-desc">This will shutdown your account. Your accoumt will be reactivated when you
+                        login again</span>
                 </div>
                 <a class="sec-act-lnk" href="">
                     Deactivate
@@ -489,6 +560,7 @@
         </div>
     </div>
 
+    <!--<script type="module" src="../js/profile_front.js"></script> -->
 </body>
 
 </html>
