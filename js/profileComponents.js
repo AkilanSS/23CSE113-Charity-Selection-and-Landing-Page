@@ -1,6 +1,5 @@
-function Dashboard(userData){
+export function Dashboard(userData){
     return `
-    <div id="main-ctn">
         <div id="brand-logo">
             GIVESYNC
         </div>
@@ -80,13 +79,12 @@ function Dashboard(userData){
                 </div>
             </div>
         </div>
-    </div>
     `
 }
 
-function DonationHistory(userData){
+export function DonationHistory(userData){
     return `
-    <div id="main-ctn">
+
         <div id="brand-logo">GIVESYNC</div>
         <div id="main-head">Donation History</div>
         <hr />
@@ -252,13 +250,12 @@ function DonationHistory(userData){
                 </div>
             </div>
         </div>
-    </div>
+
     `
 }
 
-function SavedCharities(userData){
+export function SavedCharities(userData){
     return `
-    <div id="main-ctn">
         <div id="brand-logo">GIVESYNC</div>
         <div id="main-head">Saved Charities</div>
         <hr>
@@ -396,13 +393,12 @@ function SavedCharities(userData){
                 </div>
             </div>
         </div>
-    </div>
+
     `
 }
 
 export function AccountSettings(userData){
     return `
-    <div id="main-ctn">
         <div id="brand-logo">
             GIVESYNC
         </div>
@@ -464,6 +460,16 @@ export function AccountSettings(userData){
                 </a>
             </div>
         </div>
-    </div>
+    `
+}
+
+export function EmptyPage(){
+    return `
+    
+            <h1 id="not-found-txt">The webpage your are looking for is in development!</h1>
+        <h1 id="not-found-txt">[ERROR CODE: 1001]</h1>
+        <br><br>
+        <h3 style="color:#55828B; text-align: center;">:(</h5>
+    
     `
 }
