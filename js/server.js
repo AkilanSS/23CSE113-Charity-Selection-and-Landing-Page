@@ -5,8 +5,10 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const cors = require('cors');
 
+
 const app = express();
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 console.log(process.env.MONGO_URI);
 // Connect to MongoDB
@@ -50,18 +52,52 @@ app.post('/signup', async (req, res) => {
     }
 });
 app.post('/login', async (req, res) => {
+    console.log('Login request received:', req.body);
+
     try {
         const { email, password } = req.body;
+
+        // Validate input
+        if (!email || !password) {
+            console.log('Missing email or password');
+            return res.status(400).json({ msg: 'Email and password are required' });
+        }
+
+        // Find user
         const user = await User.findOne({ email });
-        if (!user) return res.status(400).json({ msg: 'Invalid credentials' });
-        
-        const isMatch = await bcrypt.compare(password, user.password);
-        if (!isMatch) return res.status(400).json({ msg: 'Invalid credentials' });
-        
+        if (!user) {
+            console.log('User not found:', email);
+            return res.status(400).json({ msg: 'Invalid credentials' });    
+        }
+
+        // Check password
+        const comparepass = bcrypt.hash(password, 10)
+        if (comparepass == user.password) {
+            console.log('Password mismatch for user:', email);
+            return res.status(400).json({ msg: 'Invalid credentials' });
+        }
+
+        // Create token
         const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
-        res.json({ token, user });
+
+        // Prepare user response (exclude sensitive information)
+        const userResponse = {
+            _id: user._id,
+            firstName: user.firstName,
+            lastName: user.lastName,
+            email: user.email,
+        };
+
+        // Ensure a proper JSON response
+        console.log('Sending login response');
+        res.json({ token, user: userResponse });
     } catch (err) {
-        res.status(500).json({ error: err.message });
+        console.error('Login server error:', err);
+        // Ensure error response is in JSON format
+        res.status(500).json({ 
+            error: 'Server error during login', 
+            details: err.message 
+        });
     }
 });
 
