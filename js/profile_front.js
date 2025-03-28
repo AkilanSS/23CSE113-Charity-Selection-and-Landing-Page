@@ -1,6 +1,18 @@
 import { AccountSettings, SavedCharities, Dashboard, DonationHistory, EmptyPage } from "./profileComponents.js";
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
+    try{
+        const response = await fetch("../data/testuser1.json")
+        const data = await response.json()
+
+        loadLogic(JSON.stringify(data))
+    }catch(e){
+        console.log(e)
+    }
+    
+});
+
+function loadLogic(userData){
     const menuOptions = document.getElementsByClassName("menu-item");
     const mainCtn = document.getElementById("main-ctn");
     mainCtn.innerHTML = Dashboard();
@@ -10,16 +22,16 @@ document.addEventListener("DOMContentLoaded", function () {
             event.preventDefault();
             switch (event.target.id) {
                 case "menu-item1":
-                    mainCtn.innerHTML = Dashboard();
+                    mainCtn.innerHTML = Dashboard(userData);
                     break;
                 case "menu-item2":
-                    mainCtn.innerHTML = DonationHistory();
+                    mainCtn.innerHTML = DonationHistory(userData);
                     break;
                 case "menu-item3":
-                    mainCtn.innerHTML = SavedCharities();
+                    mainCtn.innerHTML = SavedCharities(userData);
                     break;
                 case "menu-item6":
-                    mainCtn.innerHTML = AccountSettings();
+                    mainCtn.innerHTML = AccountSettings(userData);
                     logicAccountSettings()
                     break;
                 default:
@@ -28,8 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
-});
-
+}
 
 function logicAccountSettings(){
     const inpCtns = document.getElementsByClassName("inp-ctn")
@@ -72,9 +83,6 @@ function logicAccountSettings(){
         confirmBtn.disabled = true
         prevUserDesc = descArea.value
     })
-
-
-    
 
     editBtn.addEventListener("click", function(event){
         descArea.disabled = false

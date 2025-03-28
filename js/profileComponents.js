@@ -4,7 +4,7 @@ export function Dashboard(userData){
             GIVESYNC
         </div>
         <div id="main-head">
-            Welcome Back, Akilan!
+            Welcome Back, ${userData}!
         </div>
         <hr>
         <div id="stat-ctn">
