@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GiveSync - Create an Account</title>
+    <link rel="stylesheet" href="/css/signup.css">
+    <link rel="stylesheet" href="/js/server.js">
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <h1 class="brand">GIVESYNC</h1>
+            <p class="tagline">You are one step closer to changing the world</p>
+        </div>
+        <div class="right-panel">
+            <h2 class="form-title">Create an Account</h2>
+            <p class="login-link">Already have an account? <a href="#">Log In</a></p>
+            
+            <form id="signup-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="First Name" id="fname" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Last Name" id="lname" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Password" id="password" required>
+                    </div>
+                </div>
+
+                
+                
+                <input type="email" class="form-control" placeholder="E-mail Address" id="email" required>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="tel" class="form-control" placeholder="Contact No." id="pnum" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Country" id="country" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="City/State" id="city" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Postal Code" id="pcode" required>
+                    </div>
+                </div>
+                
+                <input type="text" class="form-control" placeholder="Organization Name" id="oname">
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Industry" id="Industry">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Profession" id="prof">
+                    </div>
+                </div>
+                
+                <div class="checkbox-container">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">I accept the Terms and Conditions</label>
+                </div>
+                
+                <div class="checkbox-container">
+                    <input type="checkbox" id="newsletter">
+                    <label for="newsletter">Subscribe to our Newsletter</label>
+                </div>
+                
+                <button type="submit" class="btn-submit">Create Account</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.getElementById("signup-form").addEventListener("submit", async function(event) {
+            event.preventDefault();
+            
+            const formData = {
+                firstName: document.getElementById("fname").value,
+                lastName: document.getElementById("lname").value,
+                email: document.getElementById("email").value,
+                password: document.getElementById("password").value,
+                contactNo: document.getElementById("pnum").value,
+                country: document.getElementById("country").value,
+                cityState: document.getElementById("city").value,
+                postalCode: document.getElementById("pcode").value,
+                organization: document.getElementById("oname").value,
+                industry: document.getElementById("Industry").value,
+                profession: document.getElementById("prof").value
+            };
+
+            try {
+                const response = await fetch("http://localhost:5000/signup", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(formData)
+                });
+
+                const data = await response.json();
+                if (response.ok) {
+                    alert("Signup successful! You can now log in.");
+                    window.location.href = "login.html";
+                } else {
+                    alert(data.msg || "Signup failed.");
+                }
+            } catch (error) {
+                alert("Error signing up.");
+                console.error(error);
+            }
+        });
+    </script>
+</body>
+</html>

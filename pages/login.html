@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/css/login.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GiveSync - Log In</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Fira+Mono:wght@400;500;700&display=swap');
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <h2 class="form-title">Log In</h2>
+            <p class="register-link">New here? <a href="signup.html">Register</a></p>
+            
+            <form id="login-form">
+                <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-control" placeholder="E-mail Address" id="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-control" placeholder="Password" id="password" required>
+                </div>
+                
+                <button type="submit" class="btn-submit">Log In</button>
+            </form>
+            <div id="error-message"></div>
+        </div>
+        
+        <div class="right-panel">
+            <h1 class="brand">GIVESYNC</h1>
+            <p class="quote">"Service to others is the rent you pay for your room here on earth." - Muhammad Ali</p>
+        </div>
+    </div>
+    <script>
+        async function login(event) {
+    event.preventDefault();
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const errorMessageEl = document.getElementById('error-message');
+    
+    // Clear previous error messages
+    errorMessageEl.textContent = '';
+
+    try {
+        const response = await fetch('http://localhost:5000/login', { 
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email, password })
+});
+
+        // Log the raw response text before parsing
+        const responseText = await response.text();
+        console.log('Raw Response:', responseText);
+
+        // Check if response is empty
+        if (!responseText) {
+            errorMessageEl.textContent = 'Empty response from server';
+            return;
+        }
+
+        // Try to parse the response
+        let data;
+        try {
+            data = JSON.parse(responseText);
+        } catch (parseError) {
+            console.error('JSON Parsing Error:', parseError);
+            errorMessageEl.textContent = 'Error parsing server response';
+            console.log('Unparseable response:', responseText);
+            return;
+        }
+        if (response.ok) {
+    localStorage.setItem('token', data.token);
+    localStorage.setItem('user', JSON.stringify(data.user));
+    window.location.href = "index.html";
+} else {
+    errorMessageEl.textContent = data.msg || data.error || 'Login failed';
+    errorMessageEl.style.color = 'red';
+}
+    } catch (error) {
+        console.error('Login Error:', error);
+        errorMessageEl.textContent = 'Network error. Please try again.';
+        errorMessageEl.style.color = 'red';
+    }
+}
+
+// Add event listener to the form
+document.getElementById('login-form').addEventListener('submit', login);
+    </script>
+</body>
+</html>
