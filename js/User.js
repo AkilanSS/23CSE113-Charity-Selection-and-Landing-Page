@@ -12,13 +12,14 @@ const UserSchema = new Schema({
     organization: String,
     industry: String,
     profession: String,
-    'user-data': {
+    userdata: {
+        profile:{
+            displayname: String,
+            userdesc: String,
+            imgpath: String
+        },
         favourite: {
             type: [Number],
-            validate: {
-                validator: v => v.every(num => num >= 1 && num <= 5),
-                message: props => `${props.value} is not valid!`
-            }
         },
         receipts: [{
             id: Number,

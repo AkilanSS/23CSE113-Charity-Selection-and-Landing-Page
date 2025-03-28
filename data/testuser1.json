@@ -1,0 +1,32 @@
+{
+    "firstname": "Akilan",
+    "lastname": "S S",
+    "email" : "akilanss22@gmail.com",
+    "password": "blingbong",
+    "contactNo": "8300111506",
+    "country": "India",
+    "cityState": "Coimbatore",
+    "postalCode": "641659",
+    "organization": "Big Chungus Inc.",
+    "industry": "Service",
+    "profession": "Manager",
+
+    "userdata": {
+        "profile":{
+            "displayname": "Akilan",
+            "userdesc": "Peak Peak",
+            "imgpath": "../assets/images/prof_placeholder_large.png"
+        },
+
+        "favourite" : [1,4,8],
+        "reciepts" : [
+            {
+                "id" : 1,
+                "desc" : "This charity was bussin",
+                "donationID" : "ABCX-11-12342A",
+                "date": "Fri Mar 28 2025 09:05:28 GMT+0530",
+                "contrMoney" : 253300
+            }
+        ]
+    }
+}
