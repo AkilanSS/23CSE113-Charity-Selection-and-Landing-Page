@@ -94,6 +94,7 @@ function addCtnToGrid(category, reset = false) {
 }
 
 document.addEventListener("DOMContentLoaded", async function() {
+    window.sessionStorage.setItem("DonationChoice", "")
     try {
         data = await grabData();
         const catLinks = document.querySelectorAll('.cat-lnk')

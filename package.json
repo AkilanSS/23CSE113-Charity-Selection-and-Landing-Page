@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "name": "23cse113-charity-selection-and-landing-page",
   "version": "1.0.0",
   "description": "This project aims to centralize donations to charity organizations. \r This project was developed as part of the coursework requirements for 23CSE113.",
@@ -20,14 +19,11 @@
   "homepage": "https://github.com/AkilanSS/23CSE113-Charity-Selection-and-Landing-Page#readme",
   "dependencies": {
     "bcrypt": "^5.1.1",
-=======
-  "dependencies": {
->>>>>>> ab3957cda0b3d2ec9781580c1b95d9861cf85301
     "bcryptjs": "^3.0.2",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.13.0"
+    "mongoose": "^8.13.1"
   }
 }

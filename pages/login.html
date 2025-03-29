@@ -78,7 +78,7 @@
                 if (response.ok) {
                     localStorage.setItem('token', data.token);
                     localStorage.setItem('user', JSON.stringify(data.user));
-                    window.location.href = "../index.html";
+                    window.location.href = "../pages/selection.html";
                 } else {
                     errorMessageEl.textContent = data.msg || data.error || 'Login failed';
                     errorMessageEl.style.color = 'red';
