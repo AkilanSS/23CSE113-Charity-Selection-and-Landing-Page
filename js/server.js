@@ -1,16 +1,22 @@
-require('dotenv').config();
+const path = require('path'); // Add this line
+require('dotenv').config({ path: path.resolve(__dirname, '.env') }); // Modify this line
 const express = require('express');
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const cors = require('cors');
 
-
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 console.log(process.env.MONGO_URI);
+
+
+console.log("Mongo URI from env:", process.env.MONGO_URI); //add this line
+console.log("Attempting to connect to:", process.env.MONGO_URI); //add this line
+
+
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
