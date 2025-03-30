@@ -121,25 +121,6 @@ app.post('/login', async (req, res) => {
         // Prepare user response (exclude sensitive information)
         const userResponse = {
             _id: user._id,
-            firstName: user.firstName,
-            lastName: user.lastName,
-            email: user.email,
-            contactNo: user.contactNo,
-            country: user.country,
-            cityState: user.cityState,
-            postalCode: user.postalCode,
-            organization: user.organization,
-            industry: user.industry,
-            profession: user.profession,
-            userdata: {
-                profile: {
-                    displayname: user.userdata.profile.displayname,
-                    userdesc: user.userdata.profile.userdesc,
-                    imgpath: user.userdata.profile.imgpath
-                },
-                favourite: user.userdata.favourite,
-                receipts: user.userdata.receipts
-            }
         };
 
         // Ensure a proper JSON response
@@ -159,20 +140,54 @@ app.put('/addcart', async (req, res) => {
 
     try {
         const recieptList = req.body
-        console.log(recieptList)
 
         const update = await User.findByIdAndUpdate(
             recieptList.userDetail._id,
             { $push: { 'userdata.receipts': recieptList.rList } },
             { new: true }
         );
-        console.log(update.receipts)
 
         console.log("Successfully updated")
 
         res.status(201).json({ msg: "Added reciept to the user" })
 
     } catch (error) {
+        console.log(error)
+    }
+})
+
+app.post('/profileRetrieve', async (req, res) => {
+    try{
+        const data = await User.findById(req.body)
+        res.status(200).json(data)
+    }catch(error){
+        console.log(error)
+    }
+})
+
+app.put('/changeInfo', async (req, res) => {
+    try{
+        var newData = req.body
+        const peak = await User.findByIdAndUpdate(newData.id,
+            {
+                "firstName" : newData.firstName,
+                "lastName" : newData.lastName,
+                "email" : newData.email,
+                "contactNo": newData.contactNo,
+                "country" : newData.country,
+                "cityState": newData.cityState,
+                "postalCode" : newData.postalCode,
+                "organization" : newData.organization,
+                "industry" : newData.industry,
+                "profession" : newData.profession,
+                "userdata.profile.displayname": newData.userdata.profile.displayname,
+                "userdata.profile.userdesc": newData.userdata.profile.desc
+            }, {new: true}
+        )
+        console.log("Succsessfully updated")
+        res.status(201).json({msg: "Profile Updated Successfully"})
+
+    }catch(error){
         console.log(error)
     }
 })

@@ -444,6 +444,11 @@ hr {
     .sec-act:hover {
         border: 2px #55828B solid;
         box-sizing: border-box;
+
+    }
+
+    .act-txt:hover{
+        cursor: pointer;
     }
 
     .sec-act-lnk {
@@ -587,9 +592,11 @@ input:checked+.slider:before {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    width: 30ch;
     
     #desc, #desc:disabled{
-        width: 25ch;
+        width: 100%;
         text-align: center;
         background-color: #EDF2F4;
         color: #364958;
@@ -620,7 +627,7 @@ input:checked+.slider:before {
 
 #profpic-ctn{
     background-color: #EDF2F4;
-    padding: 30px 60px;
+    padding: 30px 30px;
     border-radius: 20px;
     border: 1px solid #364958;
     color: #364958;
@@ -641,6 +648,18 @@ input:checked+.slider:before {
         font-size: 20px;
         margin-bottom: 10px;
         margin-top: 10px;
+        text-align: center;
+
+        width: 100%;
+        
+        background-color: #fff;
+        border-radius: 10px;
+        border: none;
+    }
+
+    #nickname-txt:disabled{
+        background-color: #EDF2F4;
+        border: none;
     }
 
 }
