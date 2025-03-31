@@ -6,12 +6,14 @@ class Charity {
     moneyEntered;
     isFormatted;
     buttonState;
+    isFavourite;
 
-    constructor(index, buttonState = false, moneyEntered = '', isFormatted = false) {
+    constructor(index, buttonState = false, moneyEntered = '', isFormatted = false, isFavourite = false) {
         this.index = index
         this.buttonState = buttonState
         this.moneyEntered = moneyEntered
         this.isFormatted = isFormatted
+        this.isFavourite = isFavourite
     }
     
     equals(otherItem) {
@@ -29,16 +31,37 @@ async function grabData() {
     return await response.json()
 }
 
-function addCtnToGrid(category, reset = false) {
+export async function addCtnToGrid(category, reset = false) {
     const charGrid = document.getElementById("char-grid")
     charGrid.innerHTML = (reset) ? '' : charGrid.innerHTML 
+
+    try{
+        const favList = await fetch(`http://localhost:5000/getFav`,{
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: window.localStorage.getItem("user")
+        })
+        var favListArray = new Array()
+        if (favList.ok){
+            favListArray = await favList.json()
+        }
+    }catch(error){
+        console.log(error)
+    }
+
+    console.log(favListArray)
+
     category.forEach(charity => {
         const charityIdx = charity.idx
         if (!cardList.has(charityIdx)) {
             cardList.set(charityIdx, new Charity(charityIdx))
         }
         
+
         const card = cardList.get(charityIdx);
+        if (favListArray.find(element => element === charityIdx)) {
+            card.isFavourite = true;
+        }
         const moneyValue = (card.isFormatted && card.moneyEntered) ? 
             (card.isFormatted ? (card.moneyEntered.toString().startsWith('₹') ? card.moneyEntered : '₹' + addCommaToNum(card.moneyEntered)) : card.moneyEntered) : ''
         const inputDisabled = card.buttonState ? 'disabled' : ''
@@ -50,6 +73,8 @@ function addCtnToGrid(category, reset = false) {
             'M4.66667 7.33334V4.66668C4.66667 3.78262 5.01786 2.93478 5.64298 2.30965C6.2681 1.68453 7.11595 1.33334 8 1.33334C8.88406 1.33334 9.7319 1.68453 10.357 2.30965C10.9821 2.93478 11.3333 3.78262 11.3333 4.66668V7.33334M3.33333 7.33334H12.6667C13.403 7.33334 14 7.9303 14 8.66668V13.3333C14 14.0697 13.403 14.6667 12.6667 14.6667H3.33333C2.59695 14.6667 2 14.0697 2 13.3333V8.66668C2 7.9303 2.59695 7.33334 3.33333 7.33334Z' : 
             'M4.66667 7.33334V4.66668C4.66584 3.84004 4.97219 3.04259 5.52625 2.42912C6.08031 1.81566 6.84255 1.42995 7.665 1.34687C8.48745 1.26379 9.31143 1.48928 9.97698 1.97955C10.6425 2.46983 11.1022 3.18991 11.2667 4.00001M3.33333 7.33334H12.6667C13.403 7.33334 14 7.9303 14 8.66668V13.3333C14 14.0697 13.403 14.6667 12.6667 14.6667H3.33333C2.59695 14.6667 2 14.0697 2 13.3333V8.66668C2 7.9303 2.59695 7.33334 3.33333 7.33334Z';
         
+        const heartStatus = card.isFavourite ? "../assets/icons/heart-fill.svg" : "../assets/icons/heart.svg"
+
         let charCtn = `
         <div class="char-ctn" id="${charity.id}">
             <div class="img-desc">
@@ -79,7 +104,7 @@ function addCtnToGrid(category, reset = false) {
                     <div class="char-icons">
                         <img src="../assets/icons/link.svg" alt="">
                         <img src="../assets/icons/mail.svg" alt="">
-                        <img src="../assets/icons/heart.svg" alt="">
+                        <img class="fav-btn" id="fav-btn${charityIdx}" src="${heartStatus}" alt="">
                     </div>
                 </div>
             </div>
@@ -87,7 +112,7 @@ function addCtnToGrid(category, reset = false) {
 
         charGrid.innerHTML += charCtn
     });
-
+    
     eventHandler()
     updateTotalMoney()
     console.log(cardList)
@@ -95,6 +120,9 @@ function addCtnToGrid(category, reset = false) {
 
 document.addEventListener("DOMContentLoaded", async function() {
     window.sessionStorage.setItem("DonationChoice", "")
+
+    
+
     try {
         data = await grabData();
         const catLinks = document.querySelectorAll('.cat-lnk')
@@ -157,7 +185,7 @@ document.addEventListener("DOMContentLoaded", async function() {
 function eventHandler() {
     document.querySelectorAll("#m_area").forEach(element => {
         const charityIndex = parseInt(element.dataset.index)
-        
+
         if (!cardList.has(charityIndex)) {
             cardList.set(charityIndex, new Charity(charityIndex))
         }
@@ -172,6 +200,19 @@ function eventHandler() {
             element.value = card.moneyEntered.toString().startsWith('₹') ? card.moneyEntered : '₹' + addCommaToNum(card.moneyEntered)
         }
 
+        var favBtn = element.parentElement.nextElementSibling.children[2]
+        favBtn.addEventListener("click", function(){
+            var btnID = Number(favBtn.id.slice(7, favBtn.id.length))
+            if(cardList.get(btnID).isFavourite == false){
+                cardList.get(btnID).isFavourite = true
+                favBtn.src = "../assets/icons/heart-fill.svg"
+            }else{
+                cardList.get(btnID).isFavourite = false
+                favBtn.src = "../assets/icons/heart.svg"
+            }
+            updateFavourite()
+        })
+
         element.addEventListener("focusout", function(event) {
             const money = event.target.value
             if (money !== card.moneyEntered) {
@@ -185,6 +226,12 @@ function eventHandler() {
                 event.target.value = addCommaToNum(money)
                 card.isFormatted = true
             }
+
+            const moneyInputBtn = event.target.nextElementSibling
+            if (moneyInputBtn) {
+                moneyInputBtn.click()
+            }
+            
         });
 
         element.addEventListener("focus", function() {
@@ -253,6 +300,22 @@ function eventHandler() {
         }
     });
 
+}
+
+async function updateFavourite(){
+    const favoriteKeys = [...cardList.entries()].filter(([_, charity]) => charity.isFavourite === true).map(([key, _]) => key);
+    const uid = window.localStorage.getItem("user")
+    favoriteKeys.push(uid)
+    console.log(uid)
+    const updateFavResponse = await fetch("http://localhost:5000/updateFav", {
+        method : 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(favoriteKeys)
+    })
+
+    if (updateFavResponse.ok){
+        console.log("Favs updated successfully")
+    }
 }
 
 function updateTotalMoney() {

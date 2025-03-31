@@ -52,7 +52,7 @@ function loadLogic(userData, cData){
     const mainCtn = document.getElementById("main-ctn");
     mainCtn.innerHTML = Dashboard(userData, cData)
     Array.from(menuOptions).forEach(menu => {
-        menu.addEventListener("click", function (event) {
+        menu.addEventListener("click", async function (event) {
             event.preventDefault();
             switch (event.target.id) {
                 case "menu-item1":
@@ -62,7 +62,21 @@ function loadLogic(userData, cData){
                     mainCtn.innerHTML = DonationHistory(userData, cData);
                     break;
                 case "menu-item3":
-                    mainCtn.innerHTML = SavedCharities(userData, cData);
+                    try{
+                        var favListArray;
+                        const favList = await fetch(`http://localhost:5000/getFav`,{
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: window.localStorage.getItem("user")
+                        })
+                        var favListArray = new Array()
+                        if (favList.ok){
+                            favListArray = await favList.json()
+                        }
+                    }catch(error){
+                        console.log(error)
+                    }
+                    mainCtn.innerHTML = SavedCharities(userData, cData, favListArray);
                     break;
                 case "menu-item6":
                     mainCtn.innerHTML = AccountSettings(userData);

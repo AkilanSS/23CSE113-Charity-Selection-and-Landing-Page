@@ -192,6 +192,37 @@ app.put('/changeInfo', async (req, res) => {
     }
 })
 
+app.put('/updateFav', async (req, res) => {
+    try{
+        
+        var favList = req.body
+        var uid = JSON.parse(favList[favList.length - 1])._id
+        console.log(favList.slice(0, favList.length - 1))
+        const updateFav = await User.findByIdAndUpdate(uid, {
+            $set: {"userdata.favourite" : favList.slice(0, favList.length - 1)}
+        }, {new: true})
+
+        console.log(updateFav)
+    }catch(error){
+        console.log(error)
+    }
+})
+
+app.post('/getFav', async (req, res) => {
+    try{
+        var uid = req.body
+        console.log(uid)
+        var userData = await User.findById(uid)
+        console.log(userData.userdata.favourite)
+
+        res.status(200).json(userData.userdata.favourite)
+
+    }catch(error){
+        console.log(error)
+    }
+})
+
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
