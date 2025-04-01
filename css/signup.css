@@ -41,6 +41,11 @@ body {
     font-weight: 700;
     margin-bottom: 30px;
     font-weight: 700;
+
+    a{
+        text-decoration: none;
+        color: #364958;
+    }
 }
 
 .tagline {

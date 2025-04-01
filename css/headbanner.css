@@ -45,7 +45,7 @@ html {
         font-size: 16px;
         color: #3B6064;
     }
-    a{
+    #login-btn{
         font-family: 'Montserrat';
         font-weight: 600;
         font-size: 16px;
@@ -76,15 +76,6 @@ html {
     }
 }
 
-.nav-item {
-    font-size: 20px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    justify-items: center;
-    gap: 20px;
-    color: #3B6064;
-}
 
 @media (max-width: 768px) {
     .nav-item {
@@ -124,6 +115,8 @@ a:hover {
     padding: 0 5%;
     gap: 5%;
 }
+
+
 
 #front-text {
     display: flex;
@@ -688,5 +681,33 @@ footer {
 @media (max-width: 900px) {
     #char-grid{
         margin: 0 80px;
+    }
+}
+
+#main-nav-link{
+    display: flex;
+    gap: 20px;
+}
+
+.nav-item{
+    font-size: 16px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    justify-items: center;
+    gap: 20px;
+    color: #3B6064;
+
+}
+
+.navlnk{
+    color: #364958;
+    background-color: #EDF2F4;
+}
+
+
+@media (max-width:768px) {
+    #main-nav-link{
+        display: none;
     }
 }

@@ -11,7 +11,7 @@ async function grabData() {
     }
 }
 
-document.addEventListener("DOMContentLoaded", async function (event) {
+document.addEventListener("DOMContentLoaded", async function () {
     try {
         console.log("DOM loaded, fetching data...");
         data = await grabData();
@@ -31,24 +31,31 @@ document.addEventListener("DOMContentLoaded", async function (event) {
     } catch (error) {
         console.error("Error in DOMContentLoaded handler:", error);
     }
+
+    const proceedBtn = document.getElementById("comp").children[1]
+    console.log(proceedBtn)
+    proceedLogic(proceedBtn)
+
+
+
 });
 
 let tmoney = 0
 
-function displayItem(cD, data){
+function displayItem(cD, data) {
     const choiceCtn = document.getElementById("choice-ctn")
     cD = new Map(JSON.parse(cD))
     cD.forEach(char => {
-        if (!char.moneyEntered == ""){
+        if (!char.moneyEntered == "") {
             let money = remCommaFromNum(char.moneyEntered)
             tmoney += money
 
             Object.keys(data.charities).forEach(cat => {
                 specCat = eval(`data.charities.${cat}`)
                 specCat.forEach(cha => {
-                    if(cha.idx == char.index ){
+                    if (cha.idx == char.index) {
                         choiceCtn.innerHTML += `
-                        <div class="item-ctn">
+                        <div class="item-ctn" attr1=${cha.idx}>
                             <div class="char-detctn">
                                 <img src="${cha.image}" alt="">
                                 <div class="title">
@@ -66,7 +73,7 @@ function displayItem(cD, data){
             })
 
             console.log(char)
-                
+
         }
     });
 
@@ -75,10 +82,10 @@ function displayItem(cD, data){
     const tmoneyCtn = document.querySelector("#total")
     const commCtn = document.querySelector("#comm")
     const gtmoneyCtn = document.querySelector("#gtotal")
-    tmoneyCtn.innerText = "₹ "+addCommaToNum(tmoney)
-    commCtn.innerText = "₹ "+addCommaToNum(comm)
-    gtmoneyCtn.innerText = "₹"+addCommaToNum(comm + tmoney)
-    
+    tmoneyCtn.innerText = "₹ " + addCommaToNum(tmoney)
+    commCtn.innerText = "₹ " + addCommaToNum(comm)
+    gtmoneyCtn.innerText = "₹" + addCommaToNum(comm + tmoney)
+
 }
 
 function addCommaToNum(number) {
@@ -89,4 +96,60 @@ function addCommaToNum(number) {
 
 function remCommaFromNum(number) {
     return parseFloat(number?.replace(/[^\d.]/g, '') || 0)
+}
+
+
+function proceedLogic(proceedBtn) {
+    proceedBtn.addEventListener("click", async function (event) {
+        event.preventDefault()
+
+        const itemCtn = document.getElementsByClassName("item-ctn")
+        const did = document.getElementById("did")
+        var rList = new Array();
+
+        Array.from(itemCtn).forEach(item => {
+            let id = Number(item.attributes[1].value)
+            let desc = item.children[0].children[1].children[1].value
+            console.log(desc)
+            let donationID = did.innerText
+            let date = new Date()
+            let contrMoney = remCommaFromNum(item.children[1].children[1].innerHTML)
+
+            var itemBill = {
+                id: id,
+                desc: desc,
+                'donation-id': donationID,
+                date: date,
+                'contr-money': contrMoney
+            }
+
+            rList.push(itemBill)
+        })
+
+        var userDetail = JSON.parse(localStorage.getItem("user"))
+
+        recieptList = { userDetail, rList }
+
+        console.log(recieptList)
+        try {
+            const response = await fetch("http://localhost:5000/addcart", {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(recieptList)
+            })
+            if (response.ok) {
+                window.location = "profile.html"
+            }
+
+        } catch (error) {
+            console.log(error)
+        } finally {
+
+        }
+
+
+
+    })
+
+
 }

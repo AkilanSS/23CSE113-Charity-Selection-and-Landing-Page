@@ -34,7 +34,7 @@
         </div>
 
         <div class="right-panel">
-            <h1 class="brand">GIVESYNC</h1>
+            <h1 class="brand"><a href="/">GIVESYNC</a></h1>
             <p class="quote">"Service to others is the rent you pay for your room here on earth." - Muhammad Ali</p>
         </div>
     </div>
@@ -78,7 +78,7 @@
                 if (response.ok) {
                     localStorage.setItem('token', data.token);
                     localStorage.setItem('user', JSON.stringify(data.user));
-                    window.location.href = "../index.html";
+                    window.location.href = "../pages/selection.html";
                 } else {
                     errorMessageEl.textContent = data.msg || data.error || 'Login failed';
                     errorMessageEl.style.color = 'red';

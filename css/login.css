@@ -125,6 +125,10 @@ body {
     font-weight: 700;
     margin-bottom: 30px;
     letter-spacing: 1px;
+    a{
+        text-decoration: none;
+        color: #364958;
+    }
 }
 
 .quote {

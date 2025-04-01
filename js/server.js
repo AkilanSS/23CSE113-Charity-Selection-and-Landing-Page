@@ -19,8 +19,7 @@ mongoose.connect(process.env.MONGO_URI, {
 
 
 //const UserSchema = 
-
-const User = mongoose.model('User', new mongoose.Schema({
+const User = mongoose.model("user", new mongoose.Schema({
     firstName: String,
     lastName: String,
     email: { type: String, unique: true },
@@ -31,20 +30,59 @@ const User = mongoose.model('User', new mongoose.Schema({
     postalCode: String,
     organization: String,
     industry: String,
-    profession: String
-}));
-
+    profession: String,
+    userdata: {
+        profile: {
+            displayname: String,
+            userdesc: String,
+            imgpath: String
+        },
+        favourite: {
+            type: [Number],
+        },
+        receipts: [{
+            id: Number,
+            desc: String,
+            'donation-id': String,
+            date: Date,
+            'contr-money': Number
+        }]
+    }
+}))
 
 app.post('/signup', async (req, res) => {
     try {
         const { firstName, lastName, email, password, contactNo, country, cityState, postalCode, organization, industry, profession } = req.body;
-        
+
+        var imgToDisplay = "../assets/images/prof_placeholder.png"
+
         const existingUser = await User.findOne({ email });
         if (existingUser) return res.status(400).json({ msg: 'Email already in use' });
-        
+
         const hashedPassword = await bcrypt.hash(password, 10);
-        const newUser = new User({ firstName, lastName, email, password: hashedPassword, contactNo, country, cityState, postalCode, organization, industry, profession });
-        
+        const newUser = new User({
+            firstName,
+            lastName,
+            email,
+            password: hashedPassword,
+            contactNo,
+            country,
+            cityState,
+            postalCode,
+            organization,
+            industry,
+            profession,
+            userdata: {
+                profile: {
+                    displayname: `${firstName} ${lastName}`,
+                    userdesc: "",
+                    imgpath: imgToDisplay
+                },
+                favourite: [],
+                receipts: []
+            }
+        });
+
         await newUser.save();
         res.status(201).json({ msg: 'User created successfully' });
     } catch (err) {
@@ -67,7 +105,7 @@ app.post('/login', async (req, res) => {
         const user = await User.findOne({ email });
         if (!user) {
             console.log('User not found:', email);
-            return res.status(400).json({ msg: 'Invalid credentials' });    
+            return res.status(400).json({ msg: 'Invalid credentials' });
         }
 
         // Check password
@@ -83,9 +121,6 @@ app.post('/login', async (req, res) => {
         // Prepare user response (exclude sensitive information)
         const userResponse = {
             _id: user._id,
-            firstName: user.firstName,
-            lastName: user.lastName,
-            email: user.email,
         };
 
         // Ensure a proper JSON response
@@ -94,12 +129,109 @@ app.post('/login', async (req, res) => {
     } catch (err) {
         console.error('Login server error:', err);
         // Ensure error response is in JSON format
-        res.status(500).json({ 
-            error: 'Server error during login', 
-            details: err.message 
+        res.status(500).json({
+            error: 'Server error during login',
+            details: err.message
         });
     }
 });
 
+app.put('/addcart', async (req, res) => {
+
+    try {
+        const recieptList = req.body
+
+        const update = await User.findByIdAndUpdate(
+            recieptList.userDetail._id,
+            { $push: { 'userdata.receipts': recieptList.rList } },
+            { new: true }
+        );
+
+        console.log("Successfully updated")
+
+        res.status(201).json({ msg: "Added reciept to the user" })
+
+    } catch (error) {
+        console.log(error)
+    }
+})
+
+app.post('/profileRetrieve', async (req, res) => {
+    try{
+        const data = await User.findById(req.body)
+        res.status(200).json(data)
+    }catch(error){
+        console.log(error)
+    }
+})
+
+app.put('/changeInfo', async (req, res) => {
+    try{
+        var newData = req.body
+        const peak = await User.findByIdAndUpdate(newData.id,
+            {
+                "firstName" : newData.firstName,
+                "lastName" : newData.lastName,
+                "email" : newData.email,
+                "contactNo": newData.contactNo,
+                "country" : newData.country,
+                "cityState": newData.cityState,
+                "postalCode" : newData.postalCode,
+                "organization" : newData.organization,
+                "industry" : newData.industry,
+                "profession" : newData.profession,
+                "userdata.profile.displayname": newData.userdata.profile.displayname,
+                "userdata.profile.userdesc": newData.userdata.profile.desc
+            }, {new: true}
+        )
+        console.log("Succsessfully updated")
+        res.status(201).json({msg: "Profile Updated Successfully"})
+
+    }catch(error){
+        console.log(error)
+    }
+})
+
+app.put('/updateFav', async (req, res) => {
+    try{
+        
+        var favList = req.body
+        var uid = JSON.parse(favList[favList.length - 1])._id
+        console.log(favList.slice(0, favList.length - 1))
+        const updateFav = await User.findByIdAndUpdate(uid, {
+            $set: {"userdata.favourite" : favList.slice(0, favList.length - 1)}
+        }, {new: true})
+
+        console.log(updateFav)
+    }catch(error){
+        console.log(error)
+    }
+})
+
+app.post('/getFav', async (req, res) => {
+    try{
+        var uid = req.body
+        console.log(uid)
+        var userData = await User.findById(uid)
+        console.log(userData.userdata.favourite)
+
+        res.status(200).json(userData.userdata.favourite)
+
+    }catch(error){
+        console.log(error)
+    }
+})
+
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+function addCommaToNum(number) {
+    const formatter = new Intl.NumberFormat('en-IN')
+    const formattedNumber = formatter.format(number)
+    return formattedNumber
+}
+
+function remCommaFromNum(number) {
+    return parseFloat(number?.replace(/[^\d.]/g, '') || 0)
+}
