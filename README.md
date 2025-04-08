@@ -52,3 +52,7 @@ This project was developed as part of the coursework requirements for 23CSE113 -
 ├── main.js
 ├── package.json
 └── package-lock.json
+```
+## License
+
+This work is licensed under a [Creative Commons Attribution-NonCommercial 4.0 International License](https://creativecommons.org/licenses/by-nc/4.0/).
