@@ -57,7 +57,6 @@ export async function addCtnToGrid(category, reset = false) {
             cardList.set(charityIdx, new Charity(charityIdx))
         }
         
-
         const card = cardList.get(charityIdx);
         if (favListArray.find(element => element === charityIdx)) {
             card.isFavourite = true;
@@ -305,8 +304,8 @@ function eventHandler() {
 async function updateFavourite(){
     const favoriteKeys = [...cardList.entries()].filter(([_, charity]) => charity.isFavourite === true).map(([key, _]) => key);
     const uid = window.localStorage.getItem("user")
-    favoriteKeys.push(uid)
-    console.log(uid)
+    favoriteKeys.push(JSON.parse(uid))
+    console.log(JSON.stringify(favoriteKeys))
     const updateFavResponse = await fetch("http://localhost:5000/updateFav", {
         method : 'PUT',
         headers: { 'Content-Type': 'application/json' },

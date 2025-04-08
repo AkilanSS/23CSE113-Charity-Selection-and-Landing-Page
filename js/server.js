@@ -199,7 +199,7 @@ app.put('/updateFav', async (req, res) => {
     try{
         
         var favList = req.body
-        var uid = JSON.parse(favList[favList.length - 1])._id
+        var uid = favList[favList.length - 1][0]._id
         console.log(favList.slice(0, favList.length - 1))
         const updateFav = await User.findByIdAndUpdate(uid, {
             $set: {"userdata.favourite" : favList.slice(0, favList.length - 1)}
@@ -216,8 +216,6 @@ app.post('/getFav', async (req, res) => {
         var uid = req.body
         uid = uid[0]._id
         var userData = await User.findById(uid)
-        console.log(userData.userdata.favourite)
-
         res.status(200).json(userData.userdata.favourite)
 
     }catch(error){

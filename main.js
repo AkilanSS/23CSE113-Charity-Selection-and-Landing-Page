@@ -25,7 +25,12 @@ function createWindow() {
 
 function startServer() {
   const serverPath = path.join(__dirname, 'js', 'server.js');
-  serverProcess = spawn('node', [serverPath]);
+  serverProcess = spawn(process.execPath, [
+    '--no-sandbox',
+    '-r', 
+    path.join(__dirname, 'node_modules', 'electron', 'dist', 'resources', 'electron.asar', 'renderer', 'api-ipc-browser-init.js'),
+    serverPath
+  ]);
 
   serverProcess.stdout.on('data', (data) => {
     console.log(`Server stdout: ${data}`);
