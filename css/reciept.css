@@ -81,6 +81,12 @@ body{
 
     justify-content: space-between;
 
+    img{
+        height: 5em;
+        width: auto;
+        margin-left: 10px;
+    }
+
     .char-detctn{
         display: flex;
         align-items: center;
@@ -91,12 +97,12 @@ body{
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-
+            align-content: flex-start;
+            
             .char-title{
                 font-size: 15px;
+                text-align: left;
             }
-
-           
 
             input{
                 background-color: white;

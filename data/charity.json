@@ -2,15 +2,15 @@
   "charities": {
     "social_services": [
       {
-        "idx" : 1,
+        "idx": 1,
         "id": "char-ctn1",
-        "name" : "Feeding America",
-        "image": "../assets/images/char_img.svg",
-        "description": "Feeding America® is the largest hunger-relief organization in the United States. Feeding America is committed to an America where no one is hungry.",
+        "name": "Goonj",
+        "image": "../assets/images/goonj.png",
+        "description": "Goonj focuses on providing clothing, household goods, and other essential items to the needy across India, while also addressing disaster relief and community development.",
         "funding": {
-          "current": "110k",
-          "goal": "250k",
-          "percentage": 44
+          "current": "75k",
+          "goal": "180k",
+          "percentage": 42
         },
         "icons": [
           "../assets/icons/link.svg",
@@ -19,14 +19,14 @@
         ]
       },
       {
-        "idx" : 2,
+        "idx": 2,
         "id": "char-ctn2",
-        "name" : "The International Red Cross",
-        "image": "../assets/images/icrc.svg",
-        "description": "The International Red Cross provides humanitarian aid, disaster relief, and emergency assistance worldwide.",
+        "name": "CRY (Child Rights and You)",
+        "image": "../assets/images/cry.png",
+        "description": "CRY works towards ensuring the rights of children in India, focusing on education, healthcare, and protection from exploitation and abuse.",
         "funding": {
-          "current": "150k",
-          "goal": "300k",
+          "current": "120k",
+          "goal": "240k",
           "percentage": 50
         },
         "icons": [
@@ -36,15 +36,15 @@
         ]
       },
       {
-        "idx" : 3,
+        "idx": 3,
         "id": "char-ctn3",
-        "name" : "Save The Children",
-        "image": "../assets/images/stc.svg",
-        "description": "Save the Children supports children's rights and provides education, healthcare, and emergency aid worldwide.",
+        "name": "HelpAge India",
+        "image": "../assets/images/helpindia.jpg",
+        "description": "HelpAge India works for the welfare of elderly people in India, providing healthcare, combating elder abuse, and advocating for their rights.",
         "funding": {
-          "current": "90k",
-          "goal": "200k",
-          "percentage": 45
+          "current": "95k",
+          "goal": "220k",
+          "percentage": 43
         },
         "icons": [
           "../assets/icons/link.svg",
@@ -53,14 +53,15 @@
         ]
       },
       {
-        "idx" : 4,
+        "idx": 4,
         "id": "char-ctn4",
-        "image": "../assets/images/oxfam.svg",
-        "description": "Oxfam is an international confederation working to end poverty and provide aid in disasters.",
+        "name": "Smile Foundation",
+        "image": "../assets/images/smile.jpg",
+        "description": "Smile Foundation empowers underprivileged children, youth, and women through education, healthcare, livelihood, and women empowerment programs across India.",
         "funding": {
-          "current": "180k",
-          "goal": "400k",
-          "percentage": 45
+          "current": "115k",
+          "goal": "280k",
+          "percentage": 41
         },
         "icons": [
           "../assets/icons/link.svg",
@@ -69,13 +70,14 @@
         ]
       },
       {
-        "idx" : 5,
+        "idx": 5,
         "id": "char-ctn5",
-        "image": "../assets/images/char_img.svg",
-        "description": "Habitat for Humanity helps families build affordable housing worldwide.",
+        "name": "Uday Foundation",
+        "image": "../assets/images/udayfoundation.webp",
+        "description": "Uday Foundation works towards the empowerment of underprivileged children and women in India through initiatives focused on education, vocational training, healthcare, and child protection.",
         "funding": {
-          "current": "120k",
-          "goal": "300k",
+          "current": "80k",
+          "goal": "200k",
           "percentage": 40
         },
         "icons": [
@@ -87,13 +89,14 @@
     ],
     "healthcare": [
       {
-        "idx" : 6,
+        "idx": 6,
         "id": "char-ctn6",
-        "image": "../assets/images/char_img.svg",
-        "description": "Doctors Without Borders provides medical aid to people affected by conflicts, epidemics, and disasters worldwide.",
+        "name": "Doctors Without Borders/Médecins Sans Frontières (MSF)",
+        "image": "../assets/images/msf-logo.png",
+        "description": "Doctors Without Borders/Médecins Sans Frontières (MSF) provides medical aid to people affected by conflict, epidemics, disasters, or exclusion from healthcare in India and worldwide.",
         "funding": {
-          "current": "200k",
-          "goal": "500k",
+          "current": "180k",
+          "goal": "450k",
           "percentage": 40
         },
         "icons": [
@@ -103,30 +106,15 @@
         ]
       },
       {
-        "idx" : 7,
+        "idx": 7,
         "id": "char-ctn7",
-        "image": "../assets/images/char_img.svg",
-        "description": "The World Health Organization supports global health initiatives, emergency responses, and disease eradication efforts.",
-        "funding": {
-          "current": "500k",
-          "goal": "1M",
-          "percentage": 50
-        },
-        "icons": [
-          "../assets/icons/link.svg",
-          "../assets/icons/mail.svg",
-          "../assets/icons/heart.svg"
-        ]
-      },
-      {
-        "idx" : 8,
-        "id": "char-ctn8",
-        "image": "../assets/images/char_img.svg",
-        "description": "Action Against Hunger is committed to ending global hunger by providing nutrition programs and clean water initiatives.",
+        "name": "Indian Red Cross Society",
+        "image": "../assets/images/redcrossindia.png",
+        "description": "The Indian Red Cross Society provides humanitarian aid, disaster relief, and health services across India.",
         "funding": {
           "current": "130k",
-          "goal": "400k",
-          "percentage": 32
+          "goal": "300k",
+          "percentage": 43
         },
         "icons": [
           "../assets/icons/link.svg",
@@ -135,14 +123,32 @@
         ]
       },
       {
-        "idx" : 9,
+        "idx": 8,
+        "id": "char-ctn8",
+        "name": "WaterAid India",
+        "image": "../assets/images/wateraid.png",
+        "description": "WaterAid India works to provide access to clean water, sanitation, and hygiene for the poorest and most marginalized communities in India.",
+        "funding": {
+          "current": "85k",
+          "goal": "200k",
+          "percentage": 42
+        },
+        "icons": [
+          "../assets/icons/link.svg",
+          "../assets/icons/mail.svg",
+          "../assets/icons/heart.svg"
+        ]
+      },
+      {
+        "idx": 9,
         "id": "char-ctn9",
-        "image": "../assets/images/char_img.svg",
-        "description": "Water.org provides clean and safe water access to communities in developing countries.",
+        "name": "UNICEF India",
+        "image": "../assets/images/unicefindia.webp",
+        "description": "UNICEF India works to ensure the survival, protection, and development of children in India through various health and nutrition programs.",
         "funding": {
-          "current": "140k",
-          "goal": "350k",
-          "percentage": 40
+          "current": "210k",
+          "goal": "500k",
+          "percentage": 42
         },
         "icons": [
           "../assets/icons/link.svg",
@@ -151,14 +157,15 @@
         ]
       },
       {
-        "idx" : 10,
+        "idx": 10,
         "id": "char-ctn10",
-        "image": "../assets/images/char_img.svg",
-        "description": "World Food Programme is the world's largest humanitarian organization fighting hunger worldwide.",
+        "name": "MAMTA Health Institute for Mother and Child",
+        "image": "../assets/images/mamtahealth.jpg",
+        "description": "MAMTA Health Institute for Mother and Child works to improve the health and well-being of women and children in underserved communities in India.",
         "funding": {
-          "current": "300k",
-          "goal": "750k",
-          "percentage": 40
+          "current": "70k",
+          "goal": "160k",
+          "percentage": 44
         },
         "icons": [
           "../assets/icons/link.svg",
@@ -169,49 +176,53 @@
     ],
     "education": [
       {
-        "idx" : 11,
+        "idx": 11,
         "id": "char-ctn11",
-        "image": "../assets/images/char_img.svg",
-        "description": "Teach For All works to expand educational opportunity worldwide by supporting local organizations.",
+        "name": "Pratham",
+        "image": "../assets/images/pratham.png",
+        "description": "Pratham focuses on improving the quality of education for underprivileged children in India through innovative and scalable interventions.",
         "funding": {
-          "current": "180k",
-          "goal": "400k",
-          "percentage": 45
+          "current": "160k",
+          "goal": "380k",
+          "percentage": 42
         }
       },
       {
-        "idx" : 12,
+        "idx": 12,
         "id": "char-ctn12",
-        "image": "../assets/images/char_img.svg",
-        "description": "Room to Read promotes literacy and gender equality in education in low-income communities.",
+        "name": "Room to Read India",
+        "image": "../assets/images/roomtoread.jpg",
+        "description": "Room to Read India promotes literacy and a habit of reading among children, and supports girls' education.",
         "funding": {
-          "current": "100k",
-          "goal": "300k",
-          "percentage": 33
+          "current": "90k",
+          "goal": "250k",
+          "percentage": 36
         }
       }
     ],
     "human_rights": [
       {
-        "idx" : 13,
+        "idx": 13,
         "id": "char-ctn13",
-        "image": "../assets/images/char_img.svg",
-        "description": "Human Rights Watch investigates and reports on abuses happening worldwide.",
+        "name": "Amnesty International India",
+        "image": "../assets/images/amnestyinternationalindia.svg",
+        "description": "Amnesty International India campaigns for human rights, justice, and equality in India.",
         "funding": {
-          "current": "250k",
-          "goal": "500k",
-          "percentage": 50
+          "current": "140k",
+          "goal": "320k",
+          "percentage": 44
         }
       },
       {
-        "idx" : 14,
+        "idx": 14,
         "id": "char-ctn14",
-        "image": "../assets/images/char_img.svg",
-        "description": "Amnesty International works to protect human rights and advocate for justice worldwide.",
+        "name": "Human Rights Watch",
+        "image": "../assets/images/hrw.png",
+        "description": "Human Rights Watch investigates and reports on human rights abuses in India and around the world.",
         "funding": {
-          "current": "200k",
-          "goal": "450k",
-          "percentage": 44
+          "current": "190k",
+          "goal": "420k",
+          "percentage": 45
         }
       }
     ]

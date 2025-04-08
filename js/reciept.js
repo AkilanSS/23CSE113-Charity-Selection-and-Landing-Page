@@ -2,6 +2,7 @@ let data;
 let choiceData;
 
 async function grabData() {
+    const userData = window.localStorage.getItem("user");
     try {
         const response = await fetch("../data/charity.json"); // Adjust path as needed
         return await response.json();
@@ -19,6 +20,16 @@ document.addEventListener("DOMContentLoaded", async function () {
         displayItem(choiceData, data)
 
         const dateTxt = document.getElementById("date")
+        const donationID = document.getElementById("did")
+        const name = document.getElementById("name")
+        const contact = document.getElementById("contact")
+
+        const userSaveDetail = JSON.parse(window.localStorage.getItem("user"))[0]
+
+        donationID.innerText = generateDonationID(userSaveDetail)
+        name.innerText = userSaveDetail.name
+        contact.innerText = userSaveDetail.email
+
         var today = new Date();
         var dd = String(today.getDate()).padStart(2, '0');
         var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
@@ -88,17 +99,6 @@ function displayItem(cD, data) {
 
 }
 
-function addCommaToNum(number) {
-    const formatter = new Intl.NumberFormat('en-IN')
-    const formattedNumber = formatter.format(number)
-    return formattedNumber
-}
-
-function remCommaFromNum(number) {
-    return parseFloat(number?.replace(/[^\d.]/g, '') || 0)
-}
-
-
 function proceedLogic(proceedBtn) {
     proceedBtn.addEventListener("click", async function (event) {
         event.preventDefault()
@@ -126,7 +126,7 @@ function proceedLogic(proceedBtn) {
             rList.push(itemBill)
         })
 
-        var userDetail = JSON.parse(localStorage.getItem("user"))
+        var userDetail = JSON.parse(localStorage.getItem("user"))[0]._id
 
         recieptList = { userDetail, rList }
 
@@ -152,4 +152,26 @@ function proceedLogic(proceedBtn) {
     })
 
 
+}
+
+function addCommaToNum(number) {
+    const formatter = new Intl.NumberFormat('en-IN')
+    const formattedNumber = formatter.format(number)
+    return formattedNumber
+}
+
+function remCommaFromNum(number) {
+    return parseFloat(number?.replace(/[^\d.]/g, '') || 0)
+}
+
+JavaScript
+
+function generateDonationID(data) {
+    const name = new String(data.name)
+    const email = data.email
+    const date = new Date()
+
+    var donationID = date.getHours().toString() + name.slice(0,2).toUpperCase() + date.getSeconds().toString() + date.getDate().toString() + date.getMonth().toString() + date.getFullYear().toString()
+
+    return donationID;
 }

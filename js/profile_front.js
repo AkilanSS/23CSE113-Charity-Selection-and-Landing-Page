@@ -145,6 +145,7 @@ async function beginLogicAccountSettings(userData, ctn){
         descArea.disabled = true
         cancelBtn.disabled  = true
         confirmBtn.disabled = true
+        nameInp.disabled = true
     })
 
     confirmBtn.addEventListener("click", async function(event){

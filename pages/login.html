@@ -77,7 +77,8 @@
                 }
                 if (response.ok) {
                     localStorage.setItem('token', data.token);
-                    localStorage.setItem('user', JSON.stringify(data.user));
+                    var userSaveData = [data.user, data.email, data.firstName]
+                    localStorage.setItem('user', JSON.stringify(userSaveData));
                     window.location.href = "../pages/selection.html";
                 } else {
                     errorMessageEl.textContent = data.msg || data.error || 'Login failed';

@@ -201,11 +201,17 @@ hr {
     display: flex;
     align-items: center;
     gap: 30px;
+    margin: 20px 0;
 
     .num {
         font-weight: 600;
         color: #55828B;
         font-size: 16px;
+    }
+
+    img{
+        height: auto;
+        width: 150px;
     }
 
     .char-name {
@@ -275,7 +281,7 @@ hr {
 .img-desc {
     display: flex;
     width: 100%;
-    height: 150px;
+    height: 200px;
 
     img {
         float: left;
@@ -283,8 +289,8 @@ hr {
         margin-left: 15px;
         margin-bottom: 20px;
 
-        max-width: 200px;
-        height: auto;
+        width: 150px;
+        height: min-content;
 
     }
 

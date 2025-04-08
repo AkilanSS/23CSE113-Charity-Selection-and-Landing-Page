@@ -16,6 +16,7 @@ function createWindow() {
 
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
 
+  
   // Start the Node.js server
   startServer();
 
@@ -47,6 +48,8 @@ function stopServer() {
 }
 
 app.whenReady().then(createWindow);
+
+
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {

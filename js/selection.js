@@ -102,14 +102,14 @@ export async function addCtnToGrid(category, reset = false) {
                             </svg></button>
                     </div>
                     <div class="char-icons">
-                        <img src="../assets/icons/link.svg" alt="">
+                        <a href="${charity.link}"><img src="../assets/icons/link.svg" alt=""></a>
                         <img src="../assets/icons/mail.svg" alt="">
                         <img class="fav-btn" id="fav-btn${charityIdx}" src="${heartStatus}" alt="">
                     </div>
                 </div>
             </div>
         </div>`;
-
+        console.log(charity.link)
         charGrid.innerHTML += charCtn
     });
     
@@ -223,7 +223,7 @@ function eventHandler() {
                 event.target.value = ''
                 card.isFormatted = false
             } else if (card.isFormatted === false) {
-                event.target.value = addCommaToNum(money)
+                event.target.value = '₹' + addCommaToNum(money)
                 card.isFormatted = true
             }
 

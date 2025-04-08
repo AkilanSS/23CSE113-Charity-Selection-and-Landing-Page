@@ -122,6 +122,8 @@ app.post('/login', async (req, res) => {
         // Prepare user response (exclude sensitive information)
         const userResponse = {
             _id: user._id,
+            email: user.email,
+            name: user.firstName
         };
 
         // Ensure a proper JSON response
@@ -141,13 +143,13 @@ app.put('/addcart', async (req, res) => {
 
     try {
         const recieptList = req.body
-
+        console.log(recieptList.userDetail)
         const update = await User.findByIdAndUpdate(
-            recieptList.userDetail._id,
+            recieptList.userDetail,
             { $push: { 'userdata.receipts': recieptList.rList } },
             { new: true }
         );
-
+        console.log(update)
         console.log("Successfully updated")
 
         res.status(201).json({ msg: "Added reciept to the user" })
@@ -212,7 +214,7 @@ app.put('/updateFav', async (req, res) => {
 app.post('/getFav', async (req, res) => {
     try{
         var uid = req.body
-        console.log(uid)
+        uid = uid[0]._id
         var userData = await User.findById(uid)
         console.log(userData.userdata.favourite)
 

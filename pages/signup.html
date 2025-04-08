@@ -15,7 +15,7 @@
 <body>
     <div class="container">
         <div class="left-panel">
-            <h1 class="brand"><a href="/">GIVESYNC</a></h1>
+            <h1 class="brand"><a href="../index.html">GIVESYNC</a></h1>
             <p class="tagline">You are one step closer to changing the world</p>
         </div>
         <div class="right-panel">
@@ -30,20 +30,10 @@
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Last Name" id="lname" required>
                     </div>
-                </div>
+                </div> 
                 <div class="form-row">
                     <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Password" id="password" required>
-                    </div>
-                </div>
-
-                
-                
-                <input type="email" class="form-control" placeholder="E-mail Address" id="email" required>
-                
-                <div class="form-row">
-                    <div class="form-group">
-                        <input type="tel" class="form-control" placeholder="Contact No." id="pnum" required>
+                        <input type="number" minlength="10" class="form-control" placeholder="Contact No." id="pnum" required>
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Country" id="country" required>
@@ -55,7 +45,7 @@
                         <input type="text" class="form-control" placeholder="City/State" id="city" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Postal Code" id="pcode" required>
+                        <input type="number" class="form-control" placeholder="Postal Code" id="pcode" required>
                     </div>
                 </div>
                 
@@ -69,6 +59,16 @@
                         <input type="text" class="form-control" placeholder="Profession" id="prof">
                     </div>
                 </div>
+                <input type="email" class="form-control" placeholder="E-mail Address" id="email" required>
+                <div class="form-row">
+                    
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Password" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\S+$).{8,}$" id="password" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Confirm Password" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\S+$).{8,}$" id="cpassword" required>
+                    </div>
+                </div>
                 
                 <div class="checkbox-container">
                     <input type="checkbox" id="terms" required>
@@ -79,6 +79,7 @@
                     <input type="checkbox" id="newsletter">
                     <label for="newsletter">Subscribe to our Newsletter</label>
                 </div>
+                <span id="v-msg"></span>
                 
                 <button type="submit" class="btn-submit">Create Account</button>
             </form>
@@ -88,7 +89,19 @@
         document.getElementById("signup-form").addEventListener("submit", async function(event) {
             event.preventDefault();
             
-            const formData = {
+            const fpass = document.getElementById("password")
+            const cpass = document.getElementById("cpassword")
+            const vMsg = document.getElementById("v-msg")
+
+            if (fpass.value != cpass.value){
+                vMsg.innerText = "Your password in the 'Confirm Password' field should match the password you typed earlier!"
+                console.log("Bad")
+                console.log()
+            }
+            else{
+                console.log("good")
+                vMsg.innerText = ''
+                const formData = {
                 firstName: document.getElementById("fname").value,
                 lastName: document.getElementById("lname").value,
                 email: document.getElementById("email").value,
@@ -120,6 +133,9 @@
                 alert("Error signing up.");
                 console.error(error);
             }
+            }
+
+            
         });
     </script>
 </body>
