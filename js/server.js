@@ -197,9 +197,8 @@ app.put('/changeInfo', async (req, res) => {
 
 app.put('/updateFav', async (req, res) => {
     try{
-        
         var favList = req.body
-        var uid = JSON.parse(favList[favList.length - 1])._id
+        var uid = favList[favList.length - 1][0]._id
         console.log(favList.slice(0, favList.length - 1))
         const updateFav = await User.findByIdAndUpdate(uid, {
             $set: {"userdata.favourite" : favList.slice(0, favList.length - 1)}
