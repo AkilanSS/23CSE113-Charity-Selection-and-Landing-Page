@@ -1,36 +1,54 @@
 # GiveSync - 23CSE113 End Semester Project
 
 This project aims to centralize donations to charity organizations. 
-This project was developed as part of the coursework requirements for 23CSE113.
+This project was developed as part of the coursework requirements for 23CSE113 - User Interface Design.
 
-**Team Members:**
+**Team Members**
+--
 - Adwit Singh R - CB.SC.U4CSE24704
 - Akilan S S - CB.SC.U4CSE24707
-  
 
+**Technologies Used**
+--
+- HTML, CSS and Vanilla JS
+- MongoDB
+- ExpressJS
+- ElectronJS
 
-**Repo Directory:**
+**Repo Directory**
+--
 
 ```givesync/
-├── assets/      
-│   ├── images/       
-│   ├── icons/       
-│   └── fonts/        
-├── css/             
-│   ├── style.css    
-│   ├──  
-│   └── 
-├── js/              
-│   ├──       
-│   ├── 
-│   └──     
-├── pages/           
-│   ├── about.html
-│   └── contact.html
+├── assets/
+│   ├── icons/
+│   └── images/
+├── css/
+│   ├── headbanner.css
+│   ├── login.css
+│   ├── profile.css
+│   ├── reciept.css
+│   ├── selection.css
+│   └── signup.css
 ├── data/
-│   ├── charity.json      
-│   ├── 
-│   └── 
-├── index.html       
-├── .gitignore       
-└── README.md    ```
+│   ├── charity.json
+│   └── testuser1.json
+├── js/
+│   ├── .env
+│   ├── profile_front.js
+│   ├── profileComponents.js
+│   ├── reciept.js
+│   ├── selection.js
+│   ├── server.js
+│   └── User.js
+├── pages/
+│   └── static_pages/
+│   ├── login.html
+│   ├── profile.html
+│   ├── reciept.html
+│   ├── selection.html
+│   └── signup.html
+├── .gitignore
+├── index.html
+├── main.js
+├── package.json
+└── package-lock.json
