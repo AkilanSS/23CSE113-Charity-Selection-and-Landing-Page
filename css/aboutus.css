@@ -3,8 +3,9 @@
     background: linear-gradient(135deg, #C9E4CA 0%, #55828B 100%);
     border-radius: 12px;
     margin: 2rem auto;
+    margin-top: 0;
     max-width: 1800px;
-    padding: 2rem;
+    padding: 4rem;
     color: #364958;
     font-family: 'Montserrat', sans-serif;
     display: flex;
@@ -15,7 +16,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 0.9rem;
+    font-size: 64px;
     margin-bottom: 1.5rem;
   }
   .quote { flex: 1; font-style: italic; }
@@ -29,13 +30,17 @@
   }
   .banner-title {
     justify-items: center;
-    font-size: 2.5rem;
-    font-weight: 900;
-    margin-bottom: 0.5rem;
+    font-size: 64px;
+    font-weight: 700;
+    margin-bottom: 0;
+    margin-top: 30px;
   }
   .banner-sub {
     font-size: 1.25rem;
     opacity: 0.85;
+    margin-top: 0;
+    font-weight: 500;
+    font-style: italic;
   }
   
   /* Body text */

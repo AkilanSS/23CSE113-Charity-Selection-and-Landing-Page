@@ -1,134 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap');
+
 /* Banner */
 #banner {
-    background: linear-gradient(135deg, #C9E4CA 0%, #55828B 100%);
-    border-radius: 12px;
-    margin: 2rem auto;
-    max-width: 1800px;
-    padding: 2rem;
-    color: #364958;
-    font-family: 'Montserrat', sans-serif;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .banner-content {
-    max-width: 1000px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  
+  background: linear-gradient(135deg, #C9E4CA 0%, #55828B 100%);
+  border-radius: 12px;
+  margin: 2rem auto;
+  margin-top: 0;
+  max-width: 1800px;
+  padding: 4rem;
+  color: #364958;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+.banner-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.banner-title {
+  justify-items: center;
+  font-size: 64px;
+  font-weight: 700;
+  margin-bottom: 0;
+  margin-top: 30px;
+}
+
+.banner-sub {
+  font-size: 1.25rem;
+  opacity: 0.85;
+  margin-top: 0;
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* Contact Cards */
+.contact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+  padding: 0 1rem;
+}
+
+.contact-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  width: 280px;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.contact-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.contact-info h2 {
+  font-size: 1.25rem;
+  color: #364958;
+  margin-bottom: 0.5rem;
+}
+
+.contact-info p {
+  font-size: 0.95rem;
+  color: #3B6064;
+  margin: 0.25rem 0;
+}
+
+@media (max-width: 768px) {
   .banner-title {
-    font-size: 2.5rem;
-    font-weight: 900;
-    margin-bottom: 0.5rem;
+    font-size: 2rem;
   }
-  
+
   .banner-sub {
-    font-size: 1.25rem;
-    opacity: 0.85;
+    font-size: 1rem;
   }
-  
-  /* Contact Cards */
+
   .contact-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
-    margin-top: 2rem;
-    padding: 0 1rem;
-  }
-  
-  .contact-card {
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    padding: 1.5rem;
-    width: 280px;
-    text-align: center;
-    font-family: 'Montserrat', sans-serif;
-  }
-  
-  .contact-img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 1rem;
-  }
-  
-  .contact-info h2 {
-    font-size: 1.25rem;
-    color: #364958;
-    margin-bottom: 0.5rem;
-  }
-  
-  .contact-info p {
-    font-size: 0.95rem;
-    color: #3B6064;
-    margin: 0.25rem 0;
-  }
-  
-  @media (max-width: 768px) {
-    .banner-title {
-      font-size: 2rem;
-    }
-  
-    .banner-sub {
-      font-size: 1rem;
-    }
-  
-    .contact-grid {
-      flex-direction: column;
-      align-items: center;
-    }
-  }
-  footer {
-    background: linear-gradient(65.161deg, #55828B 0%, #364958 50%, #55828B 100%);
-    padding: 40px;
-    padding-top: 40px;
-    padding-bottom: 10px;
-    display: flex;
     flex-direction: column;
-    border-radius: 20px 20px 0 0;
-    margin-top: 148px;
+    align-items: center;
+  }
 }
 
-#foot-name{
-    font-family: "Fira Mono", serif;
-    font-weight: 700;
-    color: #C9E4CA;
-    font-size: 20px;
-    margin-right: 10px;
+footer {
+  background: linear-gradient(65.161deg, #55828B 0%, #364958 50%, #55828B 100%);
+  padding: 40px;
+  padding-top: 40px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px 20px 0 0;
+  margin-top: 148px;
 }
 
-#foot-ctn{
-    display: flex;
-    justify-content: space-around;
-    padding: 16px;
-    padding-top: 0;
+#foot-name {
+  font-family: "Fira Mono", serif;
+  font-weight: 700;
+  color: #C9E4CA;
+  font-size: 20px;
+  margin-right: 10px;
 }
 
-#foot-txt{
-    margin-top: 40px;
-    display: flex;
-    flex-direction: column;
-    max-width: 40%;
-    gap:20px;
-    justify-content: center;
-    
-    #foot-bold-txt{
-        font-family: 'Montserrat', 'serif';
-        font-weight: 600;
-        font-size: 1.5rem;
-        color: white;
-    }
+#foot-ctn {
+  display: flex;
+  justify-content: space-around;
+  padding: 16px;
+  padding-top: 0;
+}
 
-    #foot-light-txt{
-        font-family: 'Montserrat', 'serif';
-        font-weight: 400;
-        color: white;
-        font-size: 1.3rem;
-    }
+#foot-txt {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  max-width: 40%;
+  gap: 20px;
+  justify-content: center;
+
+  #foot-bold-txt {
+    font-family: 'Montserrat', 'serif';
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: white;
+  }
+
+  #foot-light-txt {
+    font-family: 'Montserrat', 'serif';
+    font-weight: 400;
+    color: white;
+    font-size: 1.3rem;
+  }
 }
 
 /* #foot-lnk{
@@ -166,7 +175,7 @@
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  align-items: flex-start; 
+  align-items: flex-start;
 }
 
 .link-column {
@@ -176,20 +185,20 @@
 }
 
 .link-column h3 {
-  font-size: 20px; 
-  font-weight: 600; 
-  margin-bottom: 20px; 
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
   width: 13ch;
 }
 
 
 .link-column a {
   display: block;
-  margin-bottom: 8px; 
-  color: white; 
+  margin-bottom: 8px;
+  color: white;
   text-decoration: none;
-  font-size: 1.2em; 
-  font-weight: 400; 
+  font-size: 1.2em;
+  font-weight: 400;
 }
 
 
@@ -202,141 +211,142 @@
   .link-column {
     width: 80%;
     text-align: left;
-    padding-left:0; 
+    padding-left: 0;
   }
 }
 
 .link-column {
-    padding-bottom:10px;
+  padding-bottom: 10px;
 }
 
 .link-column:last-child {
-    border-bottom: none;
-    padding-bottom:0;
+  border-bottom: none;
+  padding-bottom: 0;
 }
 
-#newsletter-ctn{
-    margin-top: 40px;
-    margin-left: 30px;
-    font-family: 'Montserrat', 'serif';
-    
+#newsletter-ctn {
+  margin-top: 40px;
+  margin-left: 30px;
+  font-family: 'Montserrat', 'serif';
 
-    label{
-        font-weight: 600;
-    }
 
-    #mail-inp-ctn {
-        display: flex;
-        width: 100%;
-      }
-      
-    #mail-inp-ctn input {
-        flex: 1;
-        margin-top: 10px;
-        height: 32px;
-        border-radius: 20px 0 0 20px;
-        border: 1px solid #364958;
-        border-right: none;
-        box-sizing: border-box;
-        padding-left: 20px;
-        font-weight: 400;
-        color: #3B6064;
-    }
+  label {
+    font-weight: 600;
+  }
 
-    #mail-inp-ctn input::placeholder{
-        font-weight: 100;
-        color: #C9E4CA;
-        font-size: 12px;
-    }
-      
-    #mail-inp-ctn button {
-        width: 100px;
-        margin-top: 10px;
-        height: 32px;
-        border-radius: 0 20px 20px 0;
-        border: 1px solid #364958;
-        white-space: nowrap;
-        box-sizing: border-box;
-        background-color:#C9E4CA;
-        color: #364958;
-        font-weight: 600;
-    }
+  #mail-inp-ctn {
+    display: flex;
+    width: 100%;
+  }
 
-    #mail-inp-ctn button:hover{
-        background-color: #3B6064;
-        color: #C9E4CA;
-        cursor:pointer;
-    }
+  #mail-inp-ctn input {
+    flex: 1;
+    margin-top: 10px;
+    height: 32px;
+    border-radius: 20px 0 0 20px;
+    border: 1px solid #364958;
+    border-right: none;
+    box-sizing: border-box;
+    padding-left: 20px;
+    font-weight: 400;
+    color: #3B6064;
+  }
+
+  #mail-inp-ctn input::placeholder {
+    font-weight: 100;
+    color: #C9E4CA;
+    font-size: 12px;
+  }
+
+  #mail-inp-ctn button {
+    width: 100px;
+    margin-top: 10px;
+    height: 32px;
+    border-radius: 0 20px 20px 0;
+    border: 1px solid #364958;
+    white-space: nowrap;
+    box-sizing: border-box;
+    background-color: #C9E4CA;
+    color: #364958;
+    font-weight: 600;
+  }
+
+  #mail-inp-ctn button:hover {
+    background-color: #3B6064;
+    color: #C9E4CA;
+    cursor: pointer;
+  }
 }
 
-#foot-footer{
-    margin-top: 20px;
-    font-family: 'Montserrat';
-    font-weight:300;
-    font-size: 13px;
-    color: white;
-    align-self: flex-end;
+#foot-footer {
+  margin-top: 20px;
+  font-family: 'Montserrat';
+  font-weight: 300;
+  font-size: 13px;
+  color: white;
+  align-self: flex-end;
 }
 
 @media (max-width: 1200px) {
 
-    #foot-ctn{
-        flex-direction: column;
-        row-gap: 20px;
+  #foot-ctn {
+    flex-direction: column;
+    row-gap: 20px;
+  }
+
+  #foot-txt {
+    max-width: 100%;
+  }
+
+  #foot-lnk {
+    margin-left: 0;
+    align-self: center;
+
+    td {
+      padding-left: 20px;
+      padding-right: 20px;
     }
 
-    #foot-txt{
-        max-width: 100%;
-    }
-
-    #foot-lnk{
-        margin-left: 0;
-        align-self: center;
-        td{
-            padding-left: 20px;
-            padding-right: 20px;
-        }
-
-        #newsletter-ctn{
-            padding-left: 0;
-        }
-    }
-
-    #foot-txt{
-        margin-top: 0;
+    #newsletter-ctn {
+      padding-left: 0;
     }
   }
 
+  #foot-txt {
+    margin-top: 0;
+  }
+}
+
 @media (max-width: 900px) {
-    #char-grid{
-        margin: 0 80px;
-    }
+  #char-grid {
+    margin: 0 80px;
+  }
 }
 
-#main-nav-link{
-    display: flex;
-    gap: 20px;
+#main-nav-link {
+  display: flex;
+  gap: 20px;
 }
 
-.nav-item{
-    font-size: 16px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    justify-items: center;
-    gap: 20px;
-    color: #3B6064;
+.nav-item {
+  font-size: 16px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  justify-items: center;
+  gap: 20px;
+  color: #3B6064;
 
 }
 
-.navlnk{
-    color: #364958;
-    background-color: #EDF2F4;
+.navlnk {
+  color: #364958;
+  background-color: #EDF2F4;
 }
 
 
 @media (max-width:768px) {
-    #main-nav-link{
-        display: none;
-    }
+  #main-nav-link {
+    display: none;
+  }
 }

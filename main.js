@@ -1,11 +1,12 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, Menu, MenuItem } = require('electron');
 const path = require('path');
-const { spawn } = require('child_process'); // Import child_process
+const { spawn } = require('child_process'); 
 
-let serverProcess; // Variable to store the server process
+let mainWindow;
+let serverProcess;
 
 function createWindow() {
-  const mainWindow = new BrowserWindow({
+  mainWindow = new BrowserWindow({ 
     width: 800,
     height: 600,
     webPreferences: {
@@ -16,7 +17,6 @@ function createWindow() {
 
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
 
-  
   // Start the Node.js server
   startServer();
 
@@ -40,16 +40,74 @@ function startServer() {
   });
 }
 
-// Ensure the server is stopped when the Electron app quits
+const contextMenu = new Menu();
+
+// Add items to the context menu
+contextMenu.append(new MenuItem({
+  label: 'View Profile',
+  click: () => {
+    console.log('View Profile clicked');
+    if (mainWindow && mainWindow.webContents) { 
+      mainWindow.webContents.executeJavaScript(`
+        window.location.href = './profile.html';
+      `).catch(err => console.error('Profile navigation error:', err));
+    } else {
+      console.error('mainWindow or mainWindow.webContents is not defined.');
+    }
+  }
+}));
+
+contextMenu.append(new MenuItem({ type: 'separator' }));
+
+contextMenu.append(new MenuItem({
+  label: 'Log Out',
+  click: () => {
+    console.log('Log Out clicked');
+    if (mainWindow && mainWindow.webContents) { 
+      mainWindow.webContents.executeJavaScript(`
+        localStorage.removeItem('user');
+        window.location.href = './login.html';
+      `).catch(err => console.error('Logout error:', err));
+    } else {
+      console.error('mainWindow or mainWindow.webContents is not defined.');
+    }
+  }
+}));
+
+contextMenu.append(new MenuItem({ type: 'separator' }));
+
+contextMenu.append(new MenuItem({
+  label: 'Select Charities',
+  click: () => {
+    console.log('Select Charities clicked');
+    if (mainWindow && mainWindow.webContents) { 
+      mainWindow.webContents.executeJavaScript(`
+        window.location.href = './selection.html';
+      `).catch(err => console.error('Cant switch error:', err));
+    } else {
+      console.error('mainWindow or mainWindow.webContents is not defined.');
+    }
+  }
+}));
+
+
+app.whenReady().then(() => {
+  createWindow(); // 
+  if (mainWindow && mainWindow.webContents) {
+    mainWindow.webContents.on('context-menu', (event, params) => {
+      contextMenu.popup({ window: mainWindow, x: params.x, y: params.y });
+    });
+  } else {
+    console.error('mainWindow or mainWindow.webContents is not defined after app.whenReady.');
+  }
+});
+
+
 function stopServer() {
   if (serverProcess) {
     serverProcess.kill();
   }
 }
-
-app.whenReady().then(createWindow);
-
-
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
@@ -63,4 +121,4 @@ app.on('activate', () => {
   }
 });
 
-app.on('will-quit', stopServer); // Stop the server when the app quits
+app.on('will-quit', stopServer);
