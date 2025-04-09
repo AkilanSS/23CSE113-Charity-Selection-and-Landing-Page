@@ -21,7 +21,8 @@ This project was developed as part of the coursework requirements for 23CSE113 -
 ```givesync/
 ├── assets/
 │   ├── icons/
-│   └── images/
+│   ├── images/
+|   └── logos/
 ├── css/
 │   ├── headbanner.css
 │   ├── login.css
