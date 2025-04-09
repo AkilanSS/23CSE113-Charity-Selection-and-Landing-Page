@@ -1,0 +1,72 @@
+/* Banner */
+#banner {
+    background: linear-gradient(135deg, #C9E4CA 0%, #55828B 100%);
+    border-radius: 12px;
+    margin: 2rem auto;
+    max-width: 1200px;
+    padding: 2rem;
+    color: #364958;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .banner-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .banner-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+  }
+  
+  .banner-sub {
+    font-size: 1.25rem;
+    opacity: 0.85;
+  }
+  
+  /* Logo Grid */
+  .logo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+    align-items: center;
+    margin-top: 2rem;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 20px;
+  }
+  
+  .logo-grid img {
+    width: 200px;
+    max-height: 160px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+  
+  .logo-grid img:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .banner-title {
+      font-size: 2rem;
+    }
+  
+    .banner-sub {
+      font-size: 1rem;
+    }
+  
+    .logo-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+  }
+  
